@@ -1,0 +1,696 @@
+[
+  {
+    "id": 1,
+    "word": "involve",
+    "part_of_speech": "verb",
+    "meaning_zh": "使涉入；包含；需要",
+    "question": "The new project will _____ students in planning the school festival.",
+    "options": {
+      "A": "obtain",
+      "B": "defend",
+      "C": "involve",
+      "D": "relieve"
+    },
+    "answer_letter": "C",
+    "answer": "involve"
+  },
+  {
+    "id": 2,
+    "word": "involvement",
+    "part_of_speech": "noun",
+    "meaning_zh": "參與；投入",
+    "question": "Parental _____ can have a positive effect on a child's education.",
+    "options": {
+      "A": "district",
+      "B": "evidence",
+      "C": "economy",
+      "D": "involvement"
+    },
+    "answer_letter": "D",
+    "answer": "involvement"
+  },
+  {
+    "id": 3,
+    "word": "participation",
+    "part_of_speech": "noun",
+    "meaning_zh": "參加；參與",
+    "question": "Active _____ in class discussions can improve your speaking skills.",
+    "options": {
+      "A": "participation",
+      "B": "persuasion",
+      "C": "equipment",
+      "D": "authority"
+    },
+    "answer_letter": "A",
+    "answer": "participation"
+  },
+  {
+    "id": 4,
+    "word": "community",
+    "part_of_speech": "noun",
+    "meaning_zh": "社區；群體；共同利益團體",
+    "question": "The volunteers worked together to improve their local _____.",
+    "options": {
+      "A": "defense",
+      "B": "extent",
+      "C": "community",
+      "D": "economics"
+    },
+    "answer_letter": "C",
+    "answer": "community"
+  },
+  {
+    "id": 5,
+    "word": "informative",
+    "part_of_speech": "adjective",
+    "meaning_zh": "有內容的；增進知識的",
+    "question": "The lecture was so _____ that I learned many useful facts.",
+    "options": {
+      "A": "informative",
+      "B": "facial",
+      "C": "economical",
+      "D": "defensive"
+    },
+    "answer_letter": "A",
+    "answer": "informative"
+  },
+  {
+    "id": 6,
+    "word": "economy",
+    "part_of_speech": "noun",
+    "meaning_zh": "經濟；節儉",
+    "question": "Tourism plays an important role in the island's _____.",
+    "options": {
+      "A": "community",
+      "B": "equipment",
+      "C": "authority",
+      "D": "economy"
+    },
+    "answer_letter": "D",
+    "answer": "economy"
+  },
+  {
+    "id": 7,
+    "word": "economic",
+    "part_of_speech": "adjective",
+    "meaning_zh": "與經濟有關的",
+    "question": "The country is facing serious _____ problems.",
+    "options": {
+      "A": "productive",
+      "B": "economic",
+      "C": "economical",
+      "D": "persuasive"
+    },
+    "answer_letter": "B",
+    "answer": "economic"
+  },
+  {
+    "id": 8,
+    "word": "economical",
+    "part_of_speech": "adjective",
+    "meaning_zh": "經濟實惠的；節省的",
+    "question": "Taking the bus is more _____ than driving to work every day.",
+    "options": {
+      "A": "economic",
+      "B": "evident",
+      "C": "physical",
+      "D": "economical"
+    },
+    "answer_letter": "D",
+    "answer": "economical"
+  },
+  {
+    "id": 9,
+    "word": "economics",
+    "part_of_speech": "noun",
+    "meaning_zh": "經濟學",
+    "question": "She studied _____ at university because she was interested in markets and trade.",
+    "options": {
+      "A": "physics",
+      "B": "evidence",
+      "C": "economy",
+      "D": "economics"
+    },
+    "answer_letter": "D",
+    "answer": "economics"
+  },
+  {
+    "id": 10,
+    "word": "economist",
+    "part_of_speech": "noun",
+    "meaning_zh": "經濟學家",
+    "question": "The _____ predicted that food prices would rise next year.",
+    "options": {
+      "A": "physicist",
+      "B": "physician",
+      "C": "economist",
+      "D": "researcher"
+    },
+    "answer_letter": "C",
+    "answer": "economist"
+  },
+  {
+    "id": 11,
+    "word": "facial",
+    "part_of_speech": "adjective",
+    "meaning_zh": "臉部的；面部的",
+    "question": "His _____ expression showed that he was surprised.",
+    "options": {
+      "A": "economic",
+      "B": "defensive",
+      "C": "facial",
+      "D": "physical"
+    },
+    "answer_letter": "C",
+    "answer": "facial"
+  },
+  {
+    "id": 12,
+    "word": "evidence",
+    "part_of_speech": "noun",
+    "meaning_zh": "證據",
+    "question": "The police found enough _____ to connect the suspect to the crime.",
+    "options": {
+      "A": "association",
+      "B": "equipment",
+      "C": "labor",
+      "D": "evidence"
+    },
+    "answer_letter": "D",
+    "answer": "evidence"
+  },
+  {
+    "id": 13,
+    "word": "evident",
+    "part_of_speech": "adjective",
+    "meaning_zh": "明顯的",
+    "question": "It was _____ from her smile that she was pleased with the result.",
+    "options": {
+      "A": "defensive",
+      "B": "persuasive",
+      "C": "evident",
+      "D": "productive"
+    },
+    "answer_letter": "C",
+    "answer": "evident"
+  },
+  {
+    "id": 14,
+    "word": "establish",
+    "part_of_speech": "verb",
+    "meaning_zh": "建立；創立",
+    "question": "The charity hopes to _____ a scholarship for students in need.",
+    "options": {
+      "A": "relieve",
+      "B": "establish",
+      "C": "obtain",
+      "D": "associate"
+    },
+    "answer_letter": "B",
+    "answer": "establish"
+  },
+  {
+    "id": 15,
+    "word": "establishment",
+    "part_of_speech": "noun",
+    "meaning_zh": "建立；創立",
+    "question": "The _____ of the new hospital improved medical care in the area.",
+    "options": {
+      "A": "establishment",
+      "B": "production",
+      "C": "participation",
+      "D": "persuasion"
+    },
+    "answer_letter": "A",
+    "answer": "establishment"
+  },
+  {
+    "id": 16,
+    "word": "including",
+    "part_of_speech": "preposition",
+    "meaning_zh": "包括",
+    "question": "Everyone, _____ the exchange students, must attend the meeting.",
+    "options": {
+      "A": "mere",
+      "B": "physical",
+      "C": "economical",
+      "D": "including"
+    },
+    "answer_letter": "D",
+    "answer": "including"
+  },
+  {
+    "id": 17,
+    "word": "defend",
+    "part_of_speech": "verb",
+    "meaning_zh": "防禦；辯護",
+    "question": "The lawyer was hired to _____ the accused man in court.",
+    "options": {
+      "A": "equip",
+      "B": "extend",
+      "C": "defend",
+      "D": "relieve"
+    },
+    "answer_letter": "C",
+    "answer": "defend"
+  },
+  {
+    "id": 18,
+    "word": "defense",
+    "part_of_speech": "noun",
+    "meaning_zh": "防禦；辯護",
+    "question": "The soccer team has a strong _____ and rarely allows goals.",
+    "options": {
+      "A": "extent",
+      "B": "authority",
+      "C": "evidence",
+      "D": "defense"
+    },
+    "answer_letter": "D",
+    "answer": "defense"
+  },
+  {
+    "id": 19,
+    "word": "defensive",
+    "part_of_speech": "adjective",
+    "meaning_zh": "防禦性的",
+    "question": "The army built several _____ positions near the border.",
+    "options": {
+      "A": "defensive",
+      "B": "economical",
+      "C": "persuasive",
+      "D": "informative"
+    },
+    "answer_letter": "A",
+    "answer": "defensive"
+  },
+  {
+    "id": 20,
+    "word": "defensible",
+    "part_of_speech": "adjective",
+    "meaning_zh": "可防禦的",
+    "question": "The castle's position on top of the hill made it easily _____.",
+    "options": {
+      "A": "defensible",
+      "B": "productive",
+      "C": "evident",
+      "D": "facial"
+    },
+    "answer_letter": "A",
+    "answer": "defensible"
+  },
+  {
+    "id": 21,
+    "word": "associate",
+    "sense": "verb",
+    "part_of_speech": "verb",
+    "meaning_zh": "使有關聯；交往",
+    "question": "Many people _____ regular exercise with better health.",
+    "options": {
+      "A": "obtain",
+      "B": "acquire",
+      "C": "associate",
+      "D": "involve"
+    },
+    "answer_letter": "C",
+    "answer": "associate"
+  },
+  {
+    "id": 22,
+    "word": "associate",
+    "sense": "noun",
+    "part_of_speech": "noun",
+    "meaning_zh": "合夥人；同事",
+    "question": "Mina is a senior _____ at a large law firm.",
+    "options": {
+      "A": "physicist",
+      "B": "associate",
+      "C": "physician",
+      "D": "economist"
+    },
+    "answer_letter": "B",
+    "answer": "associate"
+  },
+  {
+    "id": 23,
+    "word": "association",
+    "part_of_speech": "noun",
+    "meaning_zh": "協會；聯合；關聯",
+    "question": "The festival was organized in _____ with several local schools.",
+    "options": {
+      "A": "production",
+      "B": "association",
+      "C": "persuasion",
+      "D": "participation"
+    },
+    "answer_letter": "B",
+    "answer": "association"
+  },
+  {
+    "id": 24,
+    "word": "equip",
+    "part_of_speech": "verb",
+    "meaning_zh": "配備",
+    "question": "The school plans to _____ every classroom with a projector.",
+    "options": {
+      "A": "relieve",
+      "B": "equip",
+      "C": "defend",
+      "D": "establish"
+    },
+    "answer_letter": "B",
+    "answer": "equip"
+  },
+  {
+    "id": 25,
+    "word": "equipment",
+    "part_of_speech": "noun",
+    "meaning_zh": "設備；裝備",
+    "question": "The laboratory recently purchased new safety _____.",
+    "options": {
+      "A": "equipment",
+      "B": "community",
+      "C": "evidence",
+      "D": "labor"
+    },
+    "answer_letter": "A",
+    "answer": "equipment"
+  },
+  {
+    "id": 26,
+    "word": "research",
+    "sense": "noun",
+    "part_of_speech": "noun",
+    "meaning_zh": "研究",
+    "question": "The scientists conducted _____ on the effects of sleep.",
+    "options": {
+      "A": "research",
+      "B": "economics",
+      "C": "defense",
+      "D": "persuasion"
+    },
+    "answer_letter": "A",
+    "answer": "research"
+  },
+  {
+    "id": 27,
+    "word": "research",
+    "sense": "verb",
+    "part_of_speech": "verb",
+    "meaning_zh": "研究；調查",
+    "question": "Students should _____ several sources before writing the report.",
+    "options": {
+      "A": "research",
+      "B": "acquire",
+      "C": "establish",
+      "D": "obtain"
+    },
+    "answer_letter": "A",
+    "answer": "research"
+  },
+  {
+    "id": 28,
+    "word": "researcher",
+    "part_of_speech": "noun",
+    "meaning_zh": "研究員；研究人員",
+    "question": "The _____ interviewed two hundred patients for the study.",
+    "options": {
+      "A": "associate",
+      "B": "physician",
+      "C": "researcher",
+      "D": "economist"
+    },
+    "answer_letter": "C",
+    "answer": "researcher"
+  },
+  {
+    "id": 29,
+    "word": "physical",
+    "part_of_speech": "adjective",
+    "meaning_zh": "身體的；物理的",
+    "question": "Regular exercise is important for both mental and _____ health.",
+    "options": {
+      "A": "physical",
+      "B": "economic",
+      "C": "defensive",
+      "D": "facial"
+    },
+    "answer_letter": "A",
+    "answer": "physical"
+  },
+  {
+    "id": 30,
+    "word": "physically",
+    "part_of_speech": "adverb",
+    "meaning_zh": "身體上",
+    "question": "After the long race, the runners were _____ exhausted.",
+    "options": {
+      "A": "evident",
+      "B": "defensive",
+      "C": "informative",
+      "D": "physically"
+    },
+    "answer_letter": "D",
+    "answer": "physically"
+  },
+  {
+    "id": 31,
+    "word": "physician",
+    "part_of_speech": "noun",
+    "meaning_zh": "醫師",
+    "question": "The _____ examined the patient and prescribed some medicine.",
+    "options": {
+      "A": "physicist",
+      "B": "economist",
+      "C": "physician",
+      "D": "researcher"
+    },
+    "answer_letter": "C",
+    "answer": "physician"
+  },
+  {
+    "id": 32,
+    "word": "physics",
+    "part_of_speech": "noun",
+    "meaning_zh": "物理學",
+    "question": "Gravity and energy are important topics in _____.",
+    "options": {
+      "A": "research",
+      "B": "labor",
+      "C": "economics",
+      "D": "physics"
+    },
+    "answer_letter": "D",
+    "answer": "physics"
+  },
+  {
+    "id": 33,
+    "word": "physicist",
+    "part_of_speech": "noun",
+    "meaning_zh": "物理學家",
+    "question": "The _____ studied the behavior of light and energy.",
+    "options": {
+      "A": "economist",
+      "B": "physicist",
+      "C": "physician",
+      "D": "associate"
+    },
+    "answer_letter": "B",
+    "answer": "physicist"
+  },
+  {
+    "id": 34,
+    "word": "authority",
+    "part_of_speech": "noun",
+    "meaning_zh": "權威；權力；有關當局",
+    "question": "The manager has the _____ to approve the request.",
+    "options": {
+      "A": "authority",
+      "B": "extent",
+      "C": "evidence",
+      "D": "community"
+    },
+    "answer_letter": "A",
+    "answer": "authority"
+  },
+  {
+    "id": 35,
+    "word": "district",
+    "part_of_speech": "noun",
+    "meaning_zh": "行政區；地區",
+    "question": "This shopping _____ is crowded on weekends.",
+    "options": {
+      "A": "association",
+      "B": "equipment",
+      "C": "district",
+      "D": "economy"
+    },
+    "answer_letter": "C",
+    "answer": "district"
+  },
+  {
+    "id": 36,
+    "word": "labor",
+    "part_of_speech": "noun",
+    "meaning_zh": "勞動；勞力；分娩",
+    "question": "The factory depends on skilled _____ to operate its machines.",
+    "options": {
+      "A": "participation",
+      "B": "evidence",
+      "C": "persuasion",
+      "D": "labor"
+    },
+    "answer_letter": "D",
+    "answer": "labor"
+  },
+  {
+    "id": 37,
+    "word": "extend",
+    "part_of_speech": "verb",
+    "meaning_zh": "延伸；延長；擴大",
+    "question": "We decided to _____ our vacation by two days.",
+    "options": {
+      "A": "obtain",
+      "B": "defend",
+      "C": "establish",
+      "D": "extend"
+    },
+    "answer_letter": "D",
+    "answer": "extend"
+  },
+  {
+    "id": 38,
+    "word": "extent",
+    "part_of_speech": "noun",
+    "meaning_zh": "程度；範圍",
+    "question": "I did not realize the full _____ of the damage until the next morning.",
+    "options": {
+      "A": "community",
+      "B": "defense",
+      "C": "extent",
+      "D": "economy"
+    },
+    "answer_letter": "C",
+    "answer": "extent"
+  },
+  {
+    "id": 39,
+    "word": "productive",
+    "part_of_speech": "adjective",
+    "meaning_zh": "多產的；富有成效的",
+    "question": "We had a very _____ meeting and solved three major problems.",
+    "options": {
+      "A": "defensive",
+      "B": "economical",
+      "C": "persuasive",
+      "D": "productive"
+    },
+    "answer_letter": "D",
+    "answer": "productive"
+  },
+  {
+    "id": 40,
+    "word": "obtain",
+    "part_of_speech": "verb",
+    "meaning_zh": "獲得；取得",
+    "question": "Visitors must _____ permission before entering the laboratory.",
+    "options": {
+      "A": "relieve",
+      "B": "involve",
+      "C": "obtain",
+      "D": "associate"
+    },
+    "answer_letter": "C",
+    "answer": "obtain"
+  },
+  {
+    "id": 41,
+    "word": "acquire",
+    "part_of_speech": "verb",
+    "meaning_zh": "獲得；習得",
+    "question": "Children _____ language skills through practice and interaction.",
+    "options": {
+      "A": "defend",
+      "B": "acquire",
+      "C": "equip",
+      "D": "extend"
+    },
+    "answer_letter": "B",
+    "answer": "acquire"
+  },
+  {
+    "id": 42,
+    "word": "mere",
+    "part_of_speech": "adjective",
+    "meaning_zh": "僅僅的",
+    "question": "He was a _____ beginner, but he learned very quickly.",
+    "options": {
+      "A": "evident",
+      "B": "mere",
+      "C": "economic",
+      "D": "physical"
+    },
+    "answer_letter": "B",
+    "answer": "mere"
+  },
+  {
+    "id": 43,
+    "word": "persuasive",
+    "part_of_speech": "adjective",
+    "meaning_zh": "有說服力的",
+    "question": "Her argument was so _____ that everyone agreed with her.",
+    "options": {
+      "A": "economical",
+      "B": "informative",
+      "C": "defensive",
+      "D": "persuasive"
+    },
+    "answer_letter": "D",
+    "answer": "persuasive"
+  },
+  {
+    "id": 44,
+    "word": "persuasion",
+    "part_of_speech": "noun",
+    "meaning_zh": "說服；信念",
+    "question": "He used gentle _____ rather than force to change their minds.",
+    "options": {
+      "A": "participation",
+      "B": "persuasion",
+      "C": "establishment",
+      "D": "association"
+    },
+    "answer_letter": "B",
+    "answer": "persuasion"
+  },
+  {
+    "id": 45,
+    "word": "relieve",
+    "part_of_speech": "verb",
+    "meaning_zh": "減輕；緩和",
+    "question": "This medicine should _____ the pain within an hour.",
+    "options": {
+      "A": "obtain",
+      "B": "defend",
+      "C": "establish",
+      "D": "relieve"
+    },
+    "answer_letter": "D",
+    "answer": "relieve"
+  },
+  {
+    "id": 46,
+    "word": "addict",
+    "part_of_speech": "noun",
+    "meaning_zh": "上癮的人",
+    "question": "After years of drug abuse, he finally admitted that he was an _____.",
+    "options": {
+      "A": "economist",
+      "B": "addict",
+      "C": "associate",
+      "D": "physician"
+    },
+    "answer_letter": "B",
+    "answer": "addict"
+  }
+]

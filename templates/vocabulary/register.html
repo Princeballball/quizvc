@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}註冊｜單字測驗{% endblock %}
+
+{% block content %}
+<section class="paper auth-paper">
+  <div class="page-heading">
+    <p class="eyebrow">Account</p>
+    <h1>註冊</h1>
+    <p>建立帳號後即可開始測驗並保存作答紀錄。</p>
+  </div>
+
+  <form class="auth-form" method="post" novalidate>
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}">
+    {% if form.non_field_errors %}
+      <div class="form-errors" role="alert">{{ form.non_field_errors }}</div>
+    {% endif %}
+    {% for field in form %}
+      <div class="form-field">
+        {{ field.label_tag }}
+        {{ field }}
+        {% if field.help_text %}<p class="help-text">{{ field.help_text }}</p>{% endif %}
+        {% for error in field.errors %}<p class="field-error">{{ error }}</p>{% endfor %}
+      </div>
+    {% endfor %}
+    <div class="paper-actions">
+      <button class="button" type="submit">註冊</button>
+      <a class="text-link" href="{% url 'vocabulary:login' %}">已有帳號，前往登入</a>
+    </div>
+  </form>
+</section>
+{% endblock %}

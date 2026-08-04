@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "word": "observation",
+    "part_of_speech": "noun",
+    "meaning_zh": "觀察",
+    "question": "The nurse kept the patient under close _____ throughout the night.",
+    "options": {
+      "A": "profession",
+      "B": "atmosphere",
+      "C": "observation",
+      "D": "publication"
+    },
+    "answer_letter": "C",
+    "answer": "observation"
+  },
+  {
+    "id": 2,
+    "word": "proceed",
+    "part_of_speech": "verb",
+    "meaning_zh": "前進；繼續",
+    "question": "After checking your ticket, please _____ to Gate 6.",
+    "options": {
+      "A": "publish",
+      "B": "assure",
+      "C": "reflect",
+      "D": "proceed"
+    },
+    "answer_letter": "D",
+    "answer": "proceed"
+  },
+  {
+    "id": 3,
+    "word": "procedure",
+    "part_of_speech": "noun",
+    "meaning_zh": "程序；手續",
+    "question": "The receptionist explained the _____ for applying for a new passport.",
+    "options": {
+      "A": "procedure",
+      "B": "conference",
+      "C": "combination",
+      "D": "tendency"
+    },
+    "answer_letter": "A",
+    "answer": "procedure"
+  },
+  {
+    "id": 4,
+    "word": "congress",
+    "part_of_speech": "noun",
+    "meaning_zh": "國會；代表大會",
+    "question": "The international medical _____ attracted doctors from around the world.",
+    "options": {
+      "A": "profession",
+      "B": "agency",
+      "C": "congress",
+      "D": "council"
+    },
+    "answer_letter": "C",
+    "answer": "congress"
+  },
+  {
+    "id": 5,
+    "word": "council",
+    "part_of_speech": "noun",
+    "meaning_zh": "議會；委員會",
+    "question": "The city _____ voted to build a new public park.",
+    "options": {
+      "A": "council",
+      "B": "facility",
+      "C": "publisher",
+      "D": "congress"
+    },
+    "answer_letter": "A",
+    "answer": "council"
+  },
+  {
+    "id": 6,
+    "word": "demand",
+    "part_of_speech": "noun",
+    "meaning_zh": "要求；請求；需求",
+    "question": "There is a growing _____ for nurses in rural hospitals.",
+    "options": {
+      "A": "status",
+      "B": "literature",
+      "C": "capacity",
+      "D": "demand"
+    },
+    "answer_letter": "D",
+    "answer": "demand"
+  },
+  {
+    "id": 7,
+    "word": "demanding",
+    "part_of_speech": "adjective",
+    "meaning_zh": "苛求的；要求高的",
+    "question": "Caring for ten patients at once can be physically _____.",
+    "options": {
+      "A": "occasional",
+      "B": "demanding",
+      "C": "timid",
+      "D": "tribal"
+    },
+    "answer_letter": "B",
+    "answer": "demanding"
+  },
+  {
+    "id": 8,
+    "word": "reflect",
+    "part_of_speech": "verb",
+    "meaning_zh": "反射；反映；思考",
+    "question": "Take a moment to _____ on what you learned today.",
+    "options": {
+      "A": "proceed",
+      "B": "publish",
+      "C": "ensure",
+      "D": "reflect"
+    },
+    "answer_letter": "D",
+    "answer": "reflect"
+  },
+  {
+    "id": 9,
+    "word": "reflection",
+    "part_of_speech": "noun",
+    "meaning_zh": "反射；熟思",
+    "question": "After some _____, Mia decided to accept the offer.",
+    "options": {
+      "A": "publicity",
+      "B": "prevention",
+      "C": "observation",
+      "D": "reflection"
+    },
+    "answer_letter": "D",
+    "answer": "reflection"
+  },
+  {
+    "id": 10,
+    "word": "refer",
+    "part_of_speech": "verb",
+    "meaning_zh": "言及；提到；查閱",
+    "question": "Please _____ to page 25 for more information.",
+    "options": {
+      "A": "proceed",
+      "B": "assure",
+      "C": "refer",
+      "D": "contribute"
+    },
+    "answer_letter": "C",
+    "answer": "refer"
+  },
+  {
+    "id": 11,
+    "word": "reference",
+    "part_of_speech": "noun",
+    "meaning_zh": "參考；言及；提到",
+    "question": "This handbook is a useful _____ for new employees.",
+    "options": {
+      "A": "status",
+      "B": "capacity",
+      "C": "reference",
+      "D": "procedure"
+    },
+    "answer_letter": "C",
+    "answer": "reference"
+  },
+  {
+    "id": 12,
+    "word": "conference",
+    "part_of_speech": "noun",
+    "meaning_zh": "會議",
+    "question": "The company will hold a press _____ tomorrow afternoon.",
+    "options": {
+      "A": "reference",
+      "B": "atmosphere",
+      "C": "procedure",
+      "D": "conference"
+    },
+    "answer_letter": "D",
+    "answer": "conference"
+  },
+  {
+    "id": 13,
+    "word": "circumstance",
+    "part_of_speech": "noun",
+    "meaning_zh": "情況；環境",
+    "question": "She remained calm despite the difficult _____.",
+    "options": {
+      "A": "status",
+      "B": "atmosphere",
+      "C": "circumstance",
+      "D": "tendency"
+    },
+    "answer_letter": "C",
+    "answer": "circumstance"
+  },
+  {
+    "id": 14,
+    "word": "profession",
+    "part_of_speech": "noun",
+    "meaning_zh": "職業；專業",
+    "question": "Nursing is a _____ that requires both knowledge and compassion.",
+    "options": {
+      "A": "publicity",
+      "B": "profession",
+      "C": "procedure",
+      "D": "literature"
+    },
+    "answer_letter": "B",
+    "answer": "profession"
+  },
+  {
+    "id": 15,
+    "word": "professional",
+    "part_of_speech": "adjective",
+    "meaning_zh": "專業的；職業的",
+    "question": "The technician gave us _____ advice about the repair.",
+    "options": {
+      "A": "professional",
+      "B": "measurable",
+      "C": "occasional",
+      "D": "tribal"
+    },
+    "answer_letter": "A",
+    "answer": "professional"
+  },
+  {
+    "id": 16,
+    "word": "aspect",
+    "part_of_speech": "noun",
+    "meaning_zh": "方面",
+    "question": "Cost is only one _____ of the decision.",
+    "options": {
+      "A": "status",
+      "B": "capacity",
+      "C": "agency",
+      "D": "aspect"
+    },
+    "answer_letter": "D",
+    "answer": "aspect"
+  },
+  {
+    "id": 17,
+    "word": "publish",
+    "part_of_speech": "verb",
+    "meaning_zh": "出版；發表；公開",
+    "question": "The magazine plans to _____ the article next month.",
+    "options": {
+      "A": "proceed",
+      "B": "reflect",
+      "C": "publish",
+      "D": "ensure"
+    },
+    "answer_letter": "C",
+    "answer": "publish"
+  },
+  {
+    "id": 18,
+    "word": "publisher",
+    "part_of_speech": "noun",
+    "meaning_zh": "出版社；發行人",
+    "question": "The author sent her manuscript to a major _____.",
+    "options": {
+      "A": "council",
+      "B": "congress",
+      "C": "agent",
+      "D": "publisher"
+    },
+    "answer_letter": "D",
+    "answer": "publisher"
+  },
+  {
+    "id": 19,
+    "word": "publication",
+    "part_of_speech": "noun",
+    "meaning_zh": "刊物；發表；公布",
+    "question": "The research paper was accepted for _____ in a medical journal.",
+    "options": {
+      "A": "publication",
+      "B": "prevention",
+      "C": "observation",
+      "D": "contribution"
+    },
+    "answer_letter": "A",
+    "answer": "publication"
+  },
+  {
+    "id": 20,
+    "word": "publicity",
+    "part_of_speech": "noun",
+    "meaning_zh": "名氣；公開關注；宣傳",
+    "question": "The charity event received a lot of positive _____.",
+    "options": {
+      "A": "publicity",
+      "B": "literature",
+      "C": "jealousy",
+      "D": "capacity"
+    },
+    "answer_letter": "A",
+    "answer": "publicity"
+  },
+  {
+    "id": 21,
+    "word": "literature",
+    "part_of_speech": "noun",
+    "meaning_zh": "文學；文獻",
+    "question": "She studied English _____ at university.",
+    "options": {
+      "A": "publication",
+      "B": "communication",
+      "C": "literature",
+      "D": "profession"
+    },
+    "answer_letter": "C",
+    "answer": "literature"
+  },
+  {
+    "id": 22,
+    "word": "literary",
+    "part_of_speech": "adjective",
+    "meaning_zh": "文學的",
+    "question": "The novel won an important _____ award.",
+    "options": {
+      "A": "professional",
+      "B": "literary",
+      "C": "occasional",
+      "D": "tribal"
+    },
+    "answer_letter": "B",
+    "answer": "literary"
+  },
+  {
+    "id": 23,
+    "word": "consist",
+    "part_of_speech": "verb",
+    "meaning_zh": "由……組成；在於",
+    "question": "The committee will _____ of five teachers and two students.",
+    "options": {
+      "A": "proceed",
+      "B": "consist",
+      "C": "ensure",
+      "D": "contribute"
+    },
+    "answer_letter": "B",
+    "answer": "consist"
+  },
+  {
+    "id": 24,
+    "word": "consistent",
+    "part_of_speech": "adjective",
+    "meaning_zh": "前後一致的；一貫的；符合的",
+    "question": "Her explanation was _____ with the evidence.",
+    "options": {
+      "A": "occasional",
+      "B": "consistent",
+      "C": "demanding",
+      "D": "measurable"
+    },
+    "answer_letter": "B",
+    "answer": "consistent"
+  },
+  {
+    "id": 25,
+    "word": "assure",
+    "part_of_speech": "verb",
+    "meaning_zh": "向某人保證",
+    "question": "I can _____ you that your information will remain private.",
+    "options": {
+      "A": "assure",
+      "B": "refer",
+      "C": "ensure",
+      "D": "reflect"
+    },
+    "answer_letter": "A",
+    "answer": "assure"
+  },
+  {
+    "id": 26,
+    "word": "assurance",
+    "part_of_speech": "noun",
+    "meaning_zh": "保證；自信；把握",
+    "question": "The manager gave us his _____ that the problem would be fixed.",
+    "options": {
+      "A": "assurance",
+      "B": "observation",
+      "C": "contribution",
+      "D": "reference"
+    },
+    "answer_letter": "A",
+    "answer": "assurance"
+  },
+  {
+    "id": 27,
+    "word": "ensure",
+    "part_of_speech": "verb",
+    "meaning_zh": "確保",
+    "question": "Please check the door twice to _____ that it is locked.",
+    "options": {
+      "A": "ensure",
+      "B": "assure",
+      "C": "proceed",
+      "D": "publish"
+    },
+    "answer_letter": "A",
+    "answer": "ensure"
+  },
+  {
+    "id": 28,
+    "word": "timid",
+    "part_of_speech": "adjective",
+    "meaning_zh": "膽小的",
+    "question": "The _____ child was afraid to speak in front of the class.",
+    "options": {
+      "A": "measurable",
+      "B": "tribal",
+      "C": "timid",
+      "D": "demanding"
+    },
+    "answer_letter": "C",
+    "answer": "timid"
+  },
+  {
+    "id": 29,
+    "word": "tendency",
+    "part_of_speech": "noun",
+    "meaning_zh": "傾向",
+    "question": "He has a _____ to check his phone during meals.",
+    "options": {
+      "A": "tendency",
+      "B": "capacity",
+      "C": "status",
+      "D": "circumstance"
+    },
+    "answer_letter": "A",
+    "answer": "tendency"
+  },
+  {
+    "id": 30,
+    "word": "contribute",
+    "part_of_speech": "verb",
+    "meaning_zh": "捐助；貢獻；促成；導致",
+    "question": "Regular exercise can _____ to better sleep.",
+    "options": {
+      "A": "consist",
+      "B": "demand",
+      "C": "refer",
+      "D": "contribute"
+    },
+    "answer_letter": "D",
+    "answer": "contribute"
+  },
+  {
+    "id": 31,
+    "word": "contribution",
+    "part_of_speech": "noun",
+    "meaning_zh": "捐獻；貢獻",
+    "question": "Her research made an important _____ to cancer treatment.",
+    "options": {
+      "A": "publication",
+      "B": "prevention",
+      "C": "contribution",
+      "D": "communication"
+    },
+    "answer_letter": "C",
+    "answer": "contribution"
+  },
+  {
+    "id": 32,
+    "word": "agency",
+    "part_of_speech": "noun",
+    "meaning_zh": "代辦處；機關",
+    "question": "We booked our flights through a travel _____.",
+    "options": {
+      "A": "publisher",
+      "B": "congress",
+      "C": "council",
+      "D": "agency"
+    },
+    "answer_letter": "D",
+    "answer": "agency"
+  },
+  {
+    "id": 33,
+    "word": "agent",
+    "part_of_speech": "noun",
+    "meaning_zh": "代理商；經紀人",
+    "question": "The real estate _____ showed us three apartments.",
+    "options": {
+      "A": "professional",
+      "B": "agent",
+      "C": "publisher",
+      "D": "council"
+    },
+    "answer_letter": "B",
+    "answer": "agent"
+  },
+  {
+    "id": 34,
+    "word": "facility",
+    "part_of_speech": "noun",
+    "meaning_zh": "設施；設備",
+    "question": "The hospital opened a new rehabilitation _____.",
+    "options": {
+      "A": "facility",
+      "B": "capacity",
+      "C": "agency",
+      "D": "atmosphere"
+    },
+    "answer_letter": "A",
+    "answer": "facility"
+  },
+  {
+    "id": 35,
+    "word": "otherwise",
+    "part_of_speech": "adverb",
+    "meaning_zh": "否則；以相反的方式",
+    "question": "Leave now; _____, you may miss the last train.",
+    "options": {
+      "A": "professionally",
+      "B": "consistently",
+      "C": "otherwise",
+      "D": "occasionally"
+    },
+    "answer_letter": "C",
+    "answer": "otherwise"
+  },
+  {
+    "id": 36,
+    "word": "capacity",
+    "part_of_speech": "noun",
+    "meaning_zh": "容量；能力；職位",
+    "question": "The theater has a seating _____ of 800 people.",
+    "options": {
+      "A": "measure",
+      "B": "status",
+      "C": "aspect",
+      "D": "capacity"
+    },
+    "answer_letter": "D",
+    "answer": "capacity"
+  },
+  {
+    "id": 37,
+    "word": "communication",
+    "part_of_speech": "noun",
+    "meaning_zh": "聯絡；通訊；傳播",
+    "question": "Clear _____ between nurses and patients is essential.",
+    "options": {
+      "A": "publicity",
+      "B": "profession",
+      "C": "observation",
+      "D": "communication"
+    },
+    "answer_letter": "D",
+    "answer": "communication"
+  },
+  {
+    "id": 38,
+    "word": "status",
+    "part_of_speech": "noun",
+    "meaning_zh": "地位；身分；狀態；情況",
+    "question": "You can check the _____ of your application online.",
+    "options": {
+      "A": "reference",
+      "B": "aspect",
+      "C": "status",
+      "D": "atmosphere"
+    },
+    "answer_letter": "C",
+    "answer": "status"
+  },
+  {
+    "id": 39,
+    "word": "atmosphere",
+    "part_of_speech": "noun",
+    "meaning_zh": "大氣；空氣；氛圍",
+    "question": "The café has a warm and relaxing _____.",
+    "options": {
+      "A": "publicity",
+      "B": "profession",
+      "C": "circumstance",
+      "D": "atmosphere"
+    },
+    "answer_letter": "D",
+    "answer": "atmosphere"
+  },
+  {
+    "id": 40,
+    "word": "tribal",
+    "part_of_speech": "adjective",
+    "meaning_zh": "部落的",
+    "question": "The museum displayed traditional _____ clothing.",
+    "options": {
+      "A": "literary",
+      "B": "professional",
+      "C": "tribal",
+      "D": "occasional"
+    },
+    "answer_letter": "C",
+    "answer": "tribal"
+  },
+  {
+    "id": 41,
+    "word": "combination",
+    "part_of_speech": "noun",
+    "meaning_zh": "結合；聯合",
+    "question": "The dessert is a delicious _____ of chocolate and orange.",
+    "options": {
+      "A": "contribution",
+      "B": "combination",
+      "C": "communication",
+      "D": "circumstance"
+    },
+    "answer_letter": "B",
+    "answer": "combination"
+  },
+  {
+    "id": 42,
+    "word": "jealousy",
+    "part_of_speech": "noun",
+    "meaning_zh": "忌妒",
+    "question": "His _____ grew when his friend won the prize.",
+    "options": {
+      "A": "tendency",
+      "B": "jealousy",
+      "C": "observation",
+      "D": "publicity"
+    },
+    "answer_letter": "B",
+    "answer": "jealousy"
+  },
+  {
+    "id": 43,
+    "word": "prevention",
+    "part_of_speech": "noun",
+    "meaning_zh": "阻止；預防；避免",
+    "question": "Handwashing is important for the _____ of infection.",
+    "options": {
+      "A": "profession",
+      "B": "publication",
+      "C": "reflection",
+      "D": "prevention"
+    },
+    "answer_letter": "D",
+    "answer": "prevention"
+  },
+  {
+    "id": 44,
+    "word": "measure",
+    "part_of_speech": "noun",
+    "meaning_zh": "度量單位；衡量標準；措施；手段",
+    "question": "A kilometer is a _____ of distance.",
+    "options": {
+      "A": "aspect",
+      "B": "measure",
+      "C": "capacity",
+      "D": "status"
+    },
+    "answer_letter": "B",
+    "answer": "measure"
+  },
+  {
+    "id": 45,
+    "word": "measurable",
+    "part_of_speech": "adjective",
+    "meaning_zh": "可測量的；相當大的",
+    "question": "The new treatment produced a _____ improvement in patient recovery.",
+    "options": {
+      "A": "timid",
+      "B": "occasional",
+      "C": "demanding",
+      "D": "measurable"
+    },
+    "answer_letter": "D",
+    "answer": "measurable"
+  },
+  {
+    "id": 46,
+    "word": "occasional",
+    "part_of_speech": "adjective",
+    "meaning_zh": "偶爾的",
+    "question": "She makes _____ visits to her grandparents on weekends.",
+    "options": {
+      "A": "consistent",
+      "B": "occasional",
+      "C": "tribal",
+      "D": "professional"
+    },
+    "answer_letter": "B",
+    "answer": "occasional"
+  }
+]

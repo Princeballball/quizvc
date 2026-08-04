@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}單字測驗{% endblock %}
+
+{% block content %}
+<section class="paper paper--home">
+  <div class="page-heading">
+    <p class="eyebrow">Vocabulary Practice</p>
+    <h1>單字測驗</h1>
+    <p>使用例句練習單字用法，選擇題會隨機排列題目與選項。</p>
+  </div>
+
+  <div class="set-list">
+    {% for set in sets %}
+      <article class="set-row">
+        <div>
+          <h2>{{ set.title }}</h2>
+          <p>Level {{ set.level }}・Unit {{ set.unit }}・{{ set.active_question_count }} 題</p>
+          <a href="{% url 'vocabulary:word_list' set.slug %}">查看單字</a>
+        </div>
+        <form class="start-form" method="post" action="{% url 'vocabulary:start_quiz' set.slug %}">
+          {% csrf_token %}
+          <fieldset class="count-options">
+            <legend>選擇題數</legend>
+            <label><input type="radio" name="question_count" value="10" checked> 10 題</label>
+            <label><input type="radio" name="question_count" value="20"> 20 題</label>
+            <label><input type="radio" name="question_count" value="all"> 全部</label>
+          </fieldset>
+          <button class="button" type="submit">開始測驗</button>
+        </form>
+      </article>
+    {% empty %}
+      <p class="empty">目前沒有已發布的單字單元。請先匯入題庫。</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

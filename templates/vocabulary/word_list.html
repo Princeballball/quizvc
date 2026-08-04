@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}{{ vocabulary_set.title }}｜單字列表{% endblock %}
+
+{% block content %}
+<section class="paper">
+  <div class="page-heading">
+    <p class="eyebrow">{{ vocabulary_set.title }}</p>
+    <h1>單字列表</h1>
+  </div>
+
+  <form class="search-form" method="get">
+    <label for="word-search">搜尋單字、詞性或中文意思</label>
+    <div>
+      <input id="word-search" type="search" name="q" value="{{ query }}">
+      <button class="button button--small" type="submit">搜尋</button>
+    </div>
+  </form>
+
+  <div class="word-table" role="table" aria-label="單字列表">
+    <div class="word-table__head" role="row">
+      <span role="columnheader">單字</span>
+      <span role="columnheader">詞性</span>
+      <span role="columnheader">中文意思</span>
+      <span role="columnheader">例句</span>
+    </div>
+    {% for row in rows %}
+      <div class="word-table__row" role="row">
+        <span role="cell" data-label="單字">{{ row.item.word_sense.word.text }}</span>
+        <span role="cell" data-label="詞性">{{ row.item.word_sense.part_of_speech }}</span>
+        <span role="cell" data-label="中文意思">{{ row.item.word_sense.meaning_zh }}</span>
+        <span role="cell" data-label="例句">{{ row.prompt }}</span>
+      </div>
+    {% empty %}
+      <p class="empty">沒有符合搜尋條件的單字。</p>
+    {% endfor %}
+  </div>
+
+  <div class="paper-actions">
+    <a class="text-link" href="{% url 'vocabulary:home' %}">回首頁</a>
+  </div>
+</section>
+{% endblock %}

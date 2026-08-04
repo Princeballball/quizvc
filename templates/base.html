@@ -1,0 +1,46 @@
+{% load static %}
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}單字測驗{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'vocabulary/css/site.css' %}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-title" href="{% url 'vocabulary:home' %}">單字測驗</a>
+      <span class="site-subtitle">英文例句選擇題</span>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="{% url 'vocabulary:home' %}">首頁</a>
+        {% if primary_vocabulary_set %}
+          <a href="{% url 'vocabulary:word_list' primary_vocabulary_set.slug %}">單字列表</a>
+        {% endif %}
+        {% if user.is_authenticated %}
+          <a href="{% url 'vocabulary:quiz_history' %}">測驗紀錄</a>
+          <span class="nav-user">{{ user.username }}</span>
+          <form method="post" action="{% url 'vocabulary:logout' %}">
+            {% csrf_token %}
+            <button type="submit">登出</button>
+          </form>
+        {% else %}
+          <a href="{% url 'vocabulary:login' %}">登入</a>
+          <a href="{% url 'vocabulary:register' %}">註冊</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    {% if messages %}
+      <section class="messages" aria-label="訊息">
+        {% for message in messages %}
+          <p class="message message--{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+      </section>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

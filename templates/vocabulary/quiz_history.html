@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}測驗紀錄｜單字測驗{% endblock %}
+
+{% block content %}
+<section class="paper">
+  <div class="page-heading">
+    <p class="eyebrow">{{ user.username }}</p>
+    <h1>測驗紀錄</h1>
+    <p>共 {{ attempt_count }} 次已完成測驗。</p>
+  </div>
+
+  {% if page_obj.object_list %}
+    <div class="history-list">
+      {% for attempt in page_obj %}
+        <article class="history-row">
+          <div>
+            <h2>{{ attempt.vocabulary_set.title }}</h2>
+            <p>{{ attempt.submitted_at|date:"Y-m-d H:i" }}・{{ attempt.question_count }} 題・答對 {{ attempt.correct_count }} 題</p>
+          </div>
+          <div class="history-score">
+            <strong>{{ attempt.score }} / {{ attempt.total_points }}</strong>
+            <a class="text-link" href="{% url 'vocabulary:result' attempt.id %}">查看結果</a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+    {% if page_obj.has_other_pages %}
+      <nav class="pagination" aria-label="分頁">
+        {% if page_obj.has_previous %}
+          <a href="?page={{ page_obj.previous_page_number }}">上一頁</a>
+        {% endif %}
+        <span>第 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }} 頁</span>
+        {% if page_obj.has_next %}
+          <a href="?page={{ page_obj.next_page_number }}">下一頁</a>
+        {% endif %}
+      </nav>
+    {% endif %}
+  {% else %}
+    <p class="empty">目前還沒有測驗紀錄。</p>
+  {% endif %}
+</section>
+{% endblock %}

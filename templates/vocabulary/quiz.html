@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ attempt.vocabulary_set.title }}｜測驗{% endblock %}
+
+{% block content %}
+<section class="paper quiz-paper" data-question-total="{{ attempt.question_count }}">
+  <div class="quiz-heading">
+    <div>
+      <p class="eyebrow">{{ attempt.vocabulary_set.title }}</p>
+      <h1>單一選擇題</h1>
+      <p>一題 {{ attempt.points_per_question }} 分，共 {{ attempt.total_points }} 分</p>
+    </div>
+    <p class="answered-count" data-answered-count>已作答 0 / {{ attempt.question_count }}</p>
+  </div>
+
+  {% if errors %}
+    <div class="form-errors" role="alert">
+      {% for error in errors %}
+        <p>{{ error }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <form method="post" action="{% url 'vocabulary:submit_quiz' attempt.id %}" data-quiz-form>
+    {% csrf_token %}
+    {% for row in rows %}
+      <fieldset class="question-block" data-question-block>
+        <legend>
+          <span class="question-number">{{ row.attempt_question.display_order }}.</span>
+          {{ row.question.prompt }}
+        </legend>
+        <div class="choices">
+          {% for option in row.options %}
+            <label class="choice{% if row.selected_choice_id == option.choice.id|stringformat:'s' %} is-selected{% endif %}">
+              <input
+                type="radio"
+                name="question_{{ row.attempt_question.id }}"
+                value="{{ option.choice.id }}"
+                {% if row.selected_choice_id == option.choice.id|stringformat:'s' %}checked{% endif %}
+              >
+              <span class="choice-label">({{ option.display_label }})</span>
+              <span>{{ option.choice.text }}</span>
+            </label>
+          {% endfor %}
+        </div>
+      </fieldset>
+    {% endfor %}
+    <div class="paper-actions">
+      <button class="button" type="submit">送出答案</button>
+      <a class="text-link" href="{% url 'vocabulary:home' %}">回首頁</a>
+    </div>
+  </form>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'vocabulary/js/quiz.js' %}"></script>
+{% endblock %}
