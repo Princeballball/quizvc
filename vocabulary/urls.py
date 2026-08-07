@@ -6,6 +6,8 @@ app_name = "vocabulary"
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("api/heartbeat/", views.heartbeat, name="heartbeat"),
+    path("internal/active-users/", views.active_users, name="active_users"),
     path("accounts/register/", views.register, name="register"),
     path("accounts/login/", views.login_view, name="login"),
     path("accounts/logout/", views.logout_view, name="logout"),

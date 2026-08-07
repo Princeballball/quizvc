@@ -4,14 +4,16 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ValidationError
 from django.db.models import Count, Prefetch, Q
-from django.http import HttpResponseNotAllowed
+from django.http import HttpResponseForbidden, HttpResponseNotAllowed, JsonResponse
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
+from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
+from datetime import timedelta
 
 from .forms import LoginForm, RegisterForm
-from .models import QuestionChoice, QuizAttempt, VocabularySet
+from .models import ActiveSession, QuestionChoice, QuizAttempt, VocabularySet
 from .services import (
     attempt_question_rows,
     choice_display_map,
@@ -20,7 +22,6 @@ from .services import (
     parse_question_count,
     selected_choices_from_post,
 )
-
 
 def safe_next_url(request, fallback=None):
     fallback = fallback or reverse(settings.LOGIN_REDIRECT_URL)
@@ -32,6 +33,64 @@ def safe_next_url(request, fallback=None):
     ):
         return next_url
     return fallback
+
+
+def heartbeat(request):
+    if request.method != "POST":
+        return HttpResponseNotAllowed(["POST"])
+
+    if not request.session.session_key:
+        request.session.create()
+
+    user = request.user if request.user.is_authenticated else None
+    ActiveSession.objects.update_or_create(
+        session_key=request.session.session_key,
+        defaults={"user": user},
+    )
+    _cleanup_expired_active_sessions()
+    return JsonResponse({"ok": True})
+
+
+def active_users(request):
+    if request.method != "GET":
+        return HttpResponseNotAllowed(["GET"])
+    if not _has_internal_api_token(request):
+        return HttpResponseForbidden()
+
+    cutoff = timezone.now() - timedelta(seconds=settings.ACTIVE_SESSION_SECONDS)
+    sessions = (
+        ActiveSession.objects.filter(last_seen__gte=cutoff)
+        .select_related("user")
+        .order_by("-last_seen")
+    )
+    return JsonResponse(
+        {
+            "active_users": sessions.count(),
+            "sessions": [
+                {
+                    "username": session.user.username if session.user else None,
+                    "last_seen": session.last_seen.isoformat(),
+                }
+                for session in sessions
+            ],
+        }
+    )
+
+
+def _has_internal_api_token(request):
+    expected_token = settings.INTERNAL_API_TOKEN
+    if not expected_token:
+        return False
+    authorization = request.headers.get("Authorization", "")
+    prefix = "Bearer "
+    if not authorization.startswith(prefix):
+        return False
+    return authorization.removeprefix(prefix) == expected_token
+
+
+def _cleanup_expired_active_sessions():
+    cutoff = timezone.now() - timedelta(hours=settings.ACTIVE_SESSION_RETENTION_HOURS)
+    ActiveSession.objects.filter(last_seen__lt=cutoff).delete()
 
 
 def home(request):

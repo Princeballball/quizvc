@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.forms.models import BaseInlineFormSet
 
 from .models import (
+    ActiveSession,
     Question,
     QuestionChoice,
     QuizAnswer,
@@ -138,3 +139,10 @@ class QuestionChoiceAdmin(admin.ModelAdmin):
     list_display = ("question", "label", "text", "is_correct", "order")
     list_filter = ("is_correct",)
     search_fields = ("text", "question__prompt")
+
+
+@admin.register(ActiveSession)
+class ActiveSessionAdmin(admin.ModelAdmin):
+    list_display = ("session_key", "user", "last_seen")
+    search_fields = ("session_key", "user__username")
+    readonly_fields = ("session_key", "user", "last_seen")

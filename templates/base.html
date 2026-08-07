@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token }}">
   <title>{% block title %}單字測驗{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'vocabulary/css/site.css' %}">
 </head>
@@ -41,6 +42,30 @@
     {% endif %}
     {% block content %}{% endblock %}
   </main>
+  <script>
+    (function () {
+      const tokenMeta = document.querySelector("meta[name='csrf-token']");
+      const csrfToken = tokenMeta ? tokenMeta.content : "";
+
+      function sendHeartbeat() {
+        fetch("{% url 'vocabulary:heartbeat' %}", {
+          method: "POST",
+          credentials: "same-origin",
+          headers: {
+            "X-CSRFToken": csrfToken,
+            "X-Requested-With": "XMLHttpRequest"
+          }
+        }).catch(function (error) {
+          if (window.console && console.debug) {
+            console.debug("heartbeat failed", error);
+          }
+        });
+      }
+
+      sendHeartbeat();
+      window.setInterval(sendHeartbeat, {{ heartbeat_interval_ms|default:15000 }});
+    })();
+  </script>
   {% block scripts %}{% endblock %}
 </body>
 </html>

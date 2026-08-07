@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-pm%9q4+-dtm7g!k3bkglhkajik0$jlh)=afr8o5du*&f#!j+s_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['172.20.10.2', '127.0.0.1', '10.21.42.216']
+ALLOWED_HOSTS = ['192.168.100.113', '127.0.0.1', '10.21.42.216']
 
 
 # Application definition
@@ -62,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'vocabulary.context_processors.site_state',
             ],
         },
     },
@@ -125,3 +127,8 @@ AUTHENTICATION_BACKENDS = [
 LOGIN_URL = 'vocabulary:login'
 LOGIN_REDIRECT_URL = 'vocabulary:home'
 LOGOUT_REDIRECT_URL = 'vocabulary:home'
+
+INTERNAL_API_TOKEN = os.environ.get('INTERNAL_API_TOKEN')
+HEARTBEAT_INTERVAL_SECONDS = 15
+ACTIVE_SESSION_SECONDS = 45
+ACTIVE_SESSION_RETENTION_HOURS = 24

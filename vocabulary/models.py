@@ -257,3 +257,21 @@ class QuizAnswer(models.Model):
 
     def __str__(self):
         return f"{self.attempt_question}: {self.selected_choice or '未作答'}"
+
+
+class ActiveSession(models.Model):
+    session_key = models.CharField(max_length=64, unique=True)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name="active_sessions",
+    )
+    last_seen = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-last_seen"]
+
+    def __str__(self):
+        return f"{self.user or 'anonymous'} @ {self.last_seen}"
