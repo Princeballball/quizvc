@@ -93,6 +93,9 @@ htmlcov/
 .coverage.*
 .pytest_cache/
 
+# Local database
+db.sqlite3
+
 # Type checkers
 .mypy_cache/
 
