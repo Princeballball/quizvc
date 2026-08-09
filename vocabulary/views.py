@@ -57,7 +57,7 @@ def active_users(request):
     if request.method != "GET":
         return HttpResponseNotAllowed(["GET"])
     if not _has_internal_api_token(request):
-        return HttpResponseForbidden()
+        return JsonResponse({"detail": "Forbidden"}, status=403)
 
     cutoff = timezone.now() - timedelta(seconds=settings.ACTIVE_SESSION_SECONDS)
     sessions = (
@@ -87,7 +87,10 @@ def _has_internal_api_token(request):
     scheme, _, supplied_token = authorization.partition(" ")
     if scheme.lower() != "bearer" or not supplied_token:
         return False
-    return secrets.compare_digest(supplied_token, expected_token)
+    return secrets.compare_digest(
+        supplied_token.encode("utf-8"),
+        expected_token.encode("utf-8"),
+    )
 
 
 def _cleanup_expired_active_sessions():

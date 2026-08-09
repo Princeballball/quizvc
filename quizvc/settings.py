@@ -43,7 +43,7 @@ def get_env_value(name):
 SECRET_KEY = 'django-insecure-pm%9q4+-dtm7g!k3bkglhkajik0$jlh)=afr8o5du*&f#!j+s_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '192.168.100.113',
