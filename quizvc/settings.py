@@ -26,7 +26,17 @@ SECRET_KEY = 'django-insecure-pm%9q4+-dtm7g!k3bkglhkajik0$jlh)=afr8o5du*&f#!j+s_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.100.113', '127.0.0.1', '10.21.42.216']
+ALLOWED_HOSTS = [
+    '192.168.100.113',
+    '127.0.0.1',
+    'localhost',
+    '10.21.42.216',
+    '.trycloudflare.com',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.trycloudflare.com',
+]
 
 
 # Application definition
@@ -132,3 +142,5 @@ INTERNAL_API_TOKEN = os.environ.get('INTERNAL_API_TOKEN')
 HEARTBEAT_INTERVAL_SECONDS = 15
 ACTIVE_SESSION_SECONDS = 45
 ACTIVE_SESSION_RETENTION_HOURS = 24
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
