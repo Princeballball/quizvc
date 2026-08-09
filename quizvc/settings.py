@@ -17,6 +17,25 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+def get_env_value(name):
+    value = os.environ.get(name)
+    if value:
+        return value
+
+    env_path = BASE_DIR / '.env'
+    if not env_path.exists():
+        return None
+
+    for line in env_path.read_text(encoding='utf-8').splitlines():
+        line = line.strip()
+        if not line or line.startswith('#') or '=' not in line:
+            continue
+        key, raw_value = line.split('=', 1)
+        if key.strip() == name:
+            return raw_value.strip().strip('"').strip("'")
+    return None
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
@@ -138,7 +157,7 @@ LOGIN_URL = 'vocabulary:login'
 LOGIN_REDIRECT_URL = 'vocabulary:home'
 LOGOUT_REDIRECT_URL = 'vocabulary:home'
 
-INTERNAL_API_TOKEN = os.environ.get('INTERNAL_API_TOKEN')
+INTERNAL_API_TOKEN = get_env_value('INTERNAL_API_TOKEN')
 HEARTBEAT_INTERVAL_SECONDS = 15
 ACTIVE_SESSION_SECONDS = 45
 ACTIVE_SESSION_RETENTION_HOURS = 24

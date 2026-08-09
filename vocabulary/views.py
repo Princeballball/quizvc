@@ -1,3 +1,6 @@
+import secrets
+from datetime import timedelta
+
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login, logout
@@ -10,7 +13,6 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
 from django.utils.http import url_has_allowed_host_and_scheme
-from datetime import timedelta
 
 from .forms import LoginForm, RegisterForm
 from .models import ActiveSession, QuestionChoice, QuizAttempt, VocabularySet
@@ -82,10 +84,10 @@ def _has_internal_api_token(request):
     if not expected_token:
         return False
     authorization = request.headers.get("Authorization", "")
-    prefix = "Bearer "
-    if not authorization.startswith(prefix):
+    scheme, _, supplied_token = authorization.partition(" ")
+    if scheme.lower() != "bearer" or not supplied_token:
         return False
-    return authorization.removeprefix(prefix) == expected_token
+    return secrets.compare_digest(supplied_token, expected_token)
 
 
 def _cleanup_expired_active_sessions():
