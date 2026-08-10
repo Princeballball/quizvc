@@ -21,6 +21,7 @@ from .services import (
     choice_display_map,
     create_quiz_attempt,
     grade_quiz_attempt,
+    import_missing_default_vocabulary,
     parse_question_count,
     selected_choices_from_post,
 )
@@ -99,6 +100,7 @@ def _cleanup_expired_active_sessions():
 
 
 def home(request):
+    import_missing_default_vocabulary()
     sets = (
         VocabularySet.objects.filter(is_published=True)
         .annotate(active_question_count=Count("questions", filter=Q(questions__is_active=True)))

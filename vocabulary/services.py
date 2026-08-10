@@ -1,6 +1,9 @@
 import json
 import random
+import re
+from pathlib import Path
 
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.db import transaction
 
@@ -29,6 +32,30 @@ REQUIRED_IMPORT_FIELDS = {
 }
 
 DISPLAY_LABELS = ("A", "B", "C", "D")
+
+
+def import_missing_default_vocabulary():
+    """Import bundled JSON units that do not exist in the database yet."""
+    data_dir = Path(settings.BASE_DIR) / "data"
+    json_paths = sorted(data_dir.glob("unit*_vocabulary_questions.json"))
+    imported = False
+    for path in json_paths:
+        match = re.fullmatch(r"unit(\d+)_vocabulary_questions\.json", path.name)
+        if not match:
+            continue
+        unit = int(match.group(1))
+        slug = f"level-4-unit-{unit:02d}"
+        if VocabularySet.objects.filter(slug=slug).exists():
+            continue
+        import_vocabulary_json(
+            path,
+            title=f"Level 4 Unit {unit:02d}",
+            slug=slug,
+            level=4,
+            unit=unit,
+        )
+        imported = True
+    return imported
 
 
 def normalize_word(text):

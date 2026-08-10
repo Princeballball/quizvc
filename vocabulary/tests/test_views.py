@@ -4,9 +4,35 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 
-from vocabulary.models import Question
+from vocabulary.models import Question, VocabularySet
 from vocabulary.services import create_quiz_attempt, grade_quiz_attempt, choice_display_map
 from vocabulary.tests.helpers import import_fixture
+
+
+class AutomaticImportViewTests(TestCase):
+    def test_home_imports_bundled_vocabulary_when_database_is_empty(self):
+        response = self.client.get(reverse("vocabulary:home"))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(VocabularySet.objects.count(), 2)
+        self.assertEqual(Question.objects.count(), 92)
+        self.assertContains(response, "Level 4 Unit 01")
+        self.assertContains(response, "Level 4 Unit 02")
+
+    def test_home_imports_only_units_that_are_not_in_database(self):
+        import_fixture()
+        unit_one = VocabularySet.objects.get(slug="level-4-unit-01")
+        unit_one.is_published = False
+        unit_one.save(update_fields=["is_published"])
+
+        self.client.get(reverse("vocabulary:home"))
+
+        self.assertEqual(VocabularySet.objects.count(), 2)
+        unit_one.refresh_from_db()
+        self.assertFalse(unit_one.is_published)
+        self.assertTrue(
+            VocabularySet.objects.filter(slug="level-4-unit-02").exists()
+        )
 
 
 class ViewTests(TestCase):
