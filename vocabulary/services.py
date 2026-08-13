@@ -183,8 +183,29 @@ def parse_question_count(raw_value, available_count):
 
 
 def create_quiz_attempt(vocabulary_set, question_count, user=None, only_question_ids=None):
+    return create_attempt(
+        vocabulary_set,
+        question_count,
+        user=user,
+        only_question_ids=only_question_ids,
+    )
+
+
+def create_attempt(
+    vocabulary_set,
+    question_count,
+    user=None,
+    only_question_ids=None,
+    quiz_type=QuizAttempt.SENTENCE,
+    direction="",
+):
     if not getattr(user, "is_authenticated", False):
         raise ValidationError("開始測驗前請先登入。")
+
+    if quiz_type not in dict(QuizAttempt.QUIZ_TYPES):
+        raise ValidationError("測驗類型不正確。")
+    if quiz_type == QuizAttempt.TRANSLATION and direction not in dict(QuizAttempt.DIRECTIONS):
+        raise ValidationError("翻譯方向不正確。")
 
     questions = Question.objects.filter(
         vocabulary_set=vocabulary_set,
@@ -194,7 +215,14 @@ def create_quiz_attempt(vocabulary_set, question_count, user=None, only_question
     if only_question_ids is not None:
         questions = questions.filter(id__in=only_question_ids)
 
-    question_ids = list(questions.values_list("id", flat=True))
+    question_rows = list(questions.values_list("id", "word_sense_id"))
+    if quiz_type == QuizAttempt.TRANSLATION:
+        unique_questions = {}
+        for question_id, word_sense_id in question_rows:
+            unique_questions.setdefault(word_sense_id, question_id)
+        question_ids = list(unique_questions.values())
+    else:
+        question_ids = [question_id for question_id, _ in question_rows]
     if not question_ids:
         raise ValidationError("目前沒有可用題目。")
     if question_count == "all":
@@ -202,9 +230,17 @@ def create_quiz_attempt(vocabulary_set, question_count, user=None, only_question
     else:
         requested_count = int(question_count)
     if requested_count > len(question_ids):
-        raise ValidationError("題數超過可用題目數。")
+        raise ValidationError(f"題數超過可用題目數，目前最多可出 {len(question_ids)} 題。")
 
     selected_ids = random.sample(question_ids, requested_count)
+    if quiz_type == QuizAttempt.TRANSLATION:
+        return _create_translation_attempt(
+            vocabulary_set,
+            selected_ids,
+            user,
+            direction,
+        )
+
     choice_ids_by_question = {
         question_id: list(
             QuestionChoice.objects.filter(question_id=question_id).values_list("id", flat=True)
@@ -218,6 +254,8 @@ def create_quiz_attempt(vocabulary_set, question_count, user=None, only_question
         attempt = QuizAttempt.objects.create(
             user=user,
             vocabulary_set=vocabulary_set,
+            quiz_type=QuizAttempt.SENTENCE,
+            direction="",
             question_count=requested_count,
             total_points=requested_count * 5,
         )
@@ -230,6 +268,95 @@ def create_quiz_attempt(vocabulary_set, question_count, user=None, only_question
                     choice_order=choice_ids_by_question[question_id],
                 )
                 for order, question_id in enumerate(selected_ids, start=1)
+            ]
+        )
+    return attempt
+
+
+def _translation_directions(direction, count):
+    if direction != QuizAttempt.MIXED:
+        return [direction] * count
+    first_count = count // 2
+    if count % 2 and random.choice((True, False)):
+        first_count += 1
+    directions = [QuizAttempt.ZH_TO_EN] * first_count
+    directions.extend([QuizAttempt.EN_TO_ZH] * (count - first_count))
+    random.shuffle(directions)
+    return directions
+
+
+def _unique_translation_pool(vocabulary_set, direction):
+    senses = [
+        item.word_sense
+        for item in vocabulary_set.items.select_related("word_sense__word").order_by("order")
+    ]
+    text_for = (
+        (lambda sense: sense.word.text)
+        if direction == QuizAttempt.ZH_TO_EN
+        else (lambda sense: sense.meaning_zh)
+    )
+    unique = {}
+    for sense in senses:
+        text = text_for(sense).strip()
+        if text:
+            unique.setdefault(text, sense)
+    return unique, text_for
+
+
+def _translation_options(vocabulary_set, word_sense, direction):
+    pool, text_for = _unique_translation_pool(vocabulary_set, direction)
+    correct_text = text_for(word_sense).strip()
+    distractors = [text for text in pool if text != correct_text]
+    if len(distractors) < 3:
+        raise ValidationError("此單元沒有足夠的不同選項，單字翻譯題至少需要四個不同答案。")
+    choices = [correct_text, *random.sample(distractors, 3)]
+    random.shuffle(choices)
+    return choices, choices.index(correct_text)
+
+
+def _create_translation_attempt(vocabulary_set, selected_ids, user, direction):
+    questions = {
+        question.id: question
+        for question in Question.objects.filter(id__in=selected_ids).select_related(
+            "word_sense__word"
+        )
+    }
+    directions = _translation_directions(direction, len(selected_ids))
+    generated = []
+    for question_id, question_direction in zip(selected_ids, directions):
+        question = questions[question_id]
+        options, correct_index = _translation_options(
+            vocabulary_set, question.word_sense, question_direction
+        )
+        prompt = (
+            question.word_sense.meaning_zh
+            if question_direction == QuizAttempt.ZH_TO_EN
+            else question.word_sense.word.text
+        )
+        generated.append((question, question_direction, prompt, options, correct_index))
+
+    with transaction.atomic():
+        attempt = QuizAttempt.objects.create(
+            user=user,
+            vocabulary_set=vocabulary_set,
+            quiz_type=QuizAttempt.TRANSLATION,
+            direction=direction,
+            question_count=len(selected_ids),
+            total_points=len(selected_ids) * 5,
+        )
+        QuizAttemptQuestion.objects.bulk_create(
+            [
+                QuizAttemptQuestion(
+                    attempt=attempt,
+                    question=question,
+                    display_order=order,
+                    question_direction=question_direction,
+                    prompt_text=prompt,
+                    option_texts=options,
+                    correct_option_index=correct_index,
+                )
+                for order, (question, question_direction, prompt, options, correct_index)
+                in enumerate(generated, start=1)
             ]
         )
     return attempt
@@ -268,11 +395,41 @@ def attempt_question_rows(attempt):
         "question__word_sense__word",
     ).prefetch_related("question__choices")
     for attempt_question in attempt_questions:
+        if attempt.quiz_type == QuizAttempt.TRANSLATION:
+            options = [
+                {"display_label": label, "value": str(index), "text": text}
+                for index, (label, text) in enumerate(
+                    zip(DISPLAY_LABELS, attempt_question.option_texts)
+                )
+            ]
+            rows.append(
+                {
+                    "attempt_question": attempt_question,
+                    "question": attempt_question.question,
+                    "question_text": attempt_question.prompt_text,
+                    "instruction": "請選出正確的英文單字。"
+                    if attempt_question.question_direction == QuizAttempt.ZH_TO_EN
+                    else "請選出正確的中文意思。",
+                    "direction_label": attempt_question.get_question_direction_display(),
+                    "options": options,
+                }
+            )
+            continue
         rows.append(
             {
                 "attempt_question": attempt_question,
                 "question": attempt_question.question,
-                "options": choice_options_for_attempt_question(attempt_question),
+                "question_text": attempt_question.question.prompt,
+                "instruction": "",
+                "direction_label": "",
+                "options": [
+                    {
+                        **option,
+                        "value": str(option["choice"].id),
+                        "text": option["choice"].text,
+                    }
+                    for option in choice_options_for_attempt_question(attempt_question)
+                ],
             }
         )
     return rows
@@ -290,19 +447,29 @@ def grade_quiz_attempt(attempt, submitted_answers):
         correct_count = 0
 
         for attempt_question in attempt_questions:
-            selected_choice = submitted_answers.get(str(attempt_question.id))
+            selected = submitted_answers.get(str(attempt_question.id))
+            selected_choice = None
             is_correct = False
-            if selected_choice is not None:
+            selected_option_index = None
+            selected_text = ""
+            if attempt.quiz_type == QuizAttempt.TRANSLATION and selected is not None:
+                selected_option_index = selected
+                selected_text = attempt_question.option_texts[selected]
+                is_correct = selected == attempt_question.correct_option_index
+            elif selected is not None:
+                selected_choice = selected
                 if selected_choice.question_id != attempt_question.question_id:
                     raise ValidationError("送出的選項與題目不符。")
                 is_correct = selected_choice.is_correct
-                if is_correct:
-                    correct_count += 1
+            if is_correct:
+                correct_count += 1
 
             QuizAnswer.objects.update_or_create(
                 attempt_question=attempt_question,
                 defaults={
                     "selected_choice": selected_choice,
+                    "selected_option_index": selected_option_index,
+                    "selected_text": selected_text,
                     "is_correct": is_correct,
                 },
             )
@@ -321,6 +488,15 @@ def selected_choices_from_post(attempt, post_data):
         raw_choice_id = post_data.get(f"question_{attempt_question.id}")
         if not raw_choice_id:
             submitted_answers[str(attempt_question.id)] = None
+            continue
+        if attempt.quiz_type == QuizAttempt.TRANSLATION:
+            try:
+                option_index = int(raw_choice_id)
+            except (TypeError, ValueError):
+                raise ValidationError("送出的選項不存在。")
+            if option_index not in range(len(attempt_question.option_texts)):
+                raise ValidationError("送出的選項不存在。")
+            submitted_answers[str(attempt_question.id)] = option_index
             continue
         try:
             choice = QuestionChoice.objects.get(pk=raw_choice_id)

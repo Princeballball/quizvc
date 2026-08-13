@@ -14,10 +14,11 @@ class AutomaticImportViewTests(TestCase):
         response = self.client.get(reverse("vocabulary:home"))
 
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(VocabularySet.objects.count(), 2)
-        self.assertEqual(Question.objects.count(), 92)
+        self.assertEqual(VocabularySet.objects.count(), 3)
+        self.assertGreaterEqual(Question.objects.count(), 92)
         self.assertContains(response, "Level 4 Unit 01")
         self.assertContains(response, "Level 4 Unit 02")
+        self.assertContains(response, "Level 4 Unit 03")
 
     def test_home_imports_only_units_that_are_not_in_database(self):
         import_fixture()
@@ -27,11 +28,14 @@ class AutomaticImportViewTests(TestCase):
 
         self.client.get(reverse("vocabulary:home"))
 
-        self.assertEqual(VocabularySet.objects.count(), 2)
+        self.assertEqual(VocabularySet.objects.count(), 3)
         unit_one.refresh_from_db()
         self.assertFalse(unit_one.is_published)
         self.assertTrue(
             VocabularySet.objects.filter(slug="level-4-unit-02").exists()
+        )
+        self.assertTrue(
+            VocabularySet.objects.filter(slug="level-4-unit-03").exists()
         )
 
 

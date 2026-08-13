@@ -18,14 +18,20 @@
       <article class="result-item {% if row.is_correct %}is-correct{% else %}is-wrong{% endif %}">
         <h2>
           <span>{{ row.attempt_question.display_order }}.</span>
-          {{ row.question.prompt }}
+          {{ row.question_text }}
         </h2>
         <dl>
+          {% if row.direction_label %}
+          <div><dt>方向</dt><dd>{{ row.direction_label }}</dd></div>
+          <div><dt>題目</dt><dd>{{ row.question_text }}</dd></div>
+          {% endif %}
           <div>
             <dt>作答結果</dt>
             <dd>
               {% if row.is_correct %}
                 答對
+              {% elif attempt.quiz_type == "translation" and row.selected_text %}
+                答錯
               {% elif row.selected_choice %}
                 答錯
               {% else %}
@@ -36,7 +42,9 @@
           <div>
             <dt>你的選擇</dt>
             <dd>
-              {% if row.selected_choice %}
+              {% if attempt.quiz_type == "translation" and row.selected_text %}
+                {{ row.selected_text }}
+              {% elif row.selected_choice %}
                 （{{ row.selected_display_label }}）{{ row.selected_choice.text }}
               {% else %}
                 未作答
@@ -45,12 +53,12 @@
           </div>
           <div>
             <dt>正確答案</dt>
-            <dd>（{{ row.correct_display_label }}）{{ row.correct_choice.text }}</dd>
+            <dd>{% if attempt.quiz_type == "translation" %}{{ row.correct_text }}{% else %}（{{ row.correct_display_label }}）{{ row.correct_choice.text }}{% endif %}</dd>
           </div>
-          <div>
+          {% if attempt.quiz_type != "translation" %}<div>
             <dt>中文意思</dt>
             <dd>{{ row.question.word_sense.meaning_zh }}</dd>
-          </div>
+          </div>{% endif %}
         </dl>
       </article>
     {% endfor %}
@@ -60,6 +68,8 @@
     <form method="post" action="{% url 'vocabulary:start_quiz' attempt.vocabulary_set.slug %}">
       {% csrf_token %}
       <input type="hidden" name="question_count" value="{{ attempt.question_count }}">
+      <input type="hidden" name="quiz_type" value="{{ attempt.quiz_type }}">
+      <input type="hidden" name="direction" value="{{ attempt.direction }}">
       <button class="button" type="submit">再考一次</button>
     </form>
     {% if has_wrong %}

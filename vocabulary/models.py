@@ -169,6 +169,18 @@ class QuestionChoice(models.Model):
 
 
 class QuizAttempt(models.Model):
+    SENTENCE = "sentence"
+    TRANSLATION = "translation"
+    QUIZ_TYPES = [(SENTENCE, "英文例句"), (TRANSLATION, "單字翻譯")]
+    ZH_TO_EN = "zh_to_en"
+    EN_TO_ZH = "en_to_zh"
+    MIXED = "mixed"
+    DIRECTIONS = [
+        (ZH_TO_EN, "中文 → 英文"),
+        (EN_TO_ZH, "英文 → 中文"),
+        (MIXED, "雙向混合"),
+    ]
+
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -178,6 +190,8 @@ class QuizAttempt(models.Model):
     vocabulary_set = models.ForeignKey(
         VocabularySet, on_delete=models.PROTECT, related_name="attempts"
     )
+    quiz_type = models.CharField(max_length=20, choices=QUIZ_TYPES, default=SENTENCE)
+    direction = models.CharField(max_length=20, choices=DIRECTIONS, blank=True)
     question_count = models.PositiveIntegerField()
     points_per_question = models.PositiveIntegerField(default=5)
     total_points = models.PositiveIntegerField(default=0)
@@ -196,6 +210,12 @@ class QuizAttempt(models.Model):
     @property
     def wrong_count(self):
         return self.question_count - self.correct_count
+
+    @property
+    def mode_label(self):
+        if self.quiz_type == self.TRANSLATION:
+            return f"{self.get_quiz_type_display()}・{self.get_direction_display()}"
+        return self.get_quiz_type_display()
 
     def mark_submitted(self, correct_count):
         self.correct_count = correct_count
@@ -216,6 +236,12 @@ class QuizAttemptQuestion(models.Model):
     )
     display_order = models.PositiveIntegerField()
     choice_order = models.JSONField(default=list, blank=True)
+    question_direction = models.CharField(
+        max_length=20, choices=QuizAttempt.DIRECTIONS, blank=True
+    )
+    prompt_text = models.TextField(blank=True)
+    option_texts = models.JSONField(default=list, blank=True)
+    correct_option_index = models.PositiveSmallIntegerField(null=True, blank=True)
 
     class Meta:
         ordering = ["display_order"]
@@ -243,6 +269,8 @@ class QuizAnswer(models.Model):
         on_delete=models.PROTECT,
         related_name="quiz_answers",
     )
+    selected_option_index = models.PositiveSmallIntegerField(null=True, blank=True)
+    selected_text = models.CharField(max_length=255, blank=True)
     is_correct = models.BooleanField(default=False)
     answered_at = models.DateTimeField(auto_now=True)
 

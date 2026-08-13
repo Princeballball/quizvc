@@ -20,6 +20,17 @@
         </div>
         <form class="start-form" method="post" action="{% url 'vocabulary:start_quiz' set.slug %}">
           {% csrf_token %}
+          <fieldset class="mode-options" data-mode-selector>
+            <legend>測驗類型</legend>
+            <label><input type="radio" name="quiz_type" value="sentence" checked> 英文例句</label>
+            <label><input type="radio" name="quiz_type" value="translation"> 單字翻譯</label>
+          </fieldset>
+          <fieldset class="mode-options direction-options" data-direction-selector hidden>
+            <legend>翻譯方向</legend>
+            <label><input type="radio" name="direction" value="zh_to_en" checked> 中文 → 英文</label>
+            <label><input type="radio" name="direction" value="en_to_zh"> 英文 → 中文</label>
+            <label><input type="radio" name="direction" value="mixed"> 雙向混合</label>
+          </fieldset>
           <fieldset class="count-options">
             <legend>選擇題數</legend>
             <label><input type="radio" name="question_count" value="10" checked> 10 題</label>
@@ -34,4 +45,18 @@
     {% endfor %}
   </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.querySelectorAll("[data-mode-selector]").forEach(function (selector) {
+    const form = selector.closest("form");
+    const directions = form.querySelector("[data-direction-selector]");
+    function updateDirectionVisibility() {
+      directions.hidden = form.querySelector("[name='quiz_type']:checked").value !== "translation";
+    }
+    selector.addEventListener("change", updateDirectionVisibility);
+    updateDirectionVisibility();
+  });
+</script>
 {% endblock %}

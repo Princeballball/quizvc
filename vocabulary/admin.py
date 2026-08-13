@@ -105,24 +105,28 @@ class QuizAttemptQuestionInline(admin.TabularInline):
     model = QuizAttemptQuestion
     extra = 0
     can_delete = False
-    readonly_fields = ("question", "display_order")
+    readonly_fields = ("question", "display_order", "question_direction")
 
 
 @admin.register(QuizAttempt)
 class QuizAttemptAdmin(admin.ModelAdmin):
     list_display = (
         "vocabulary_set",
+        "quiz_type",
+        "direction",
         "score",
         "total_points",
         "correct_count",
         "created_at",
         "submitted_at",
     )
-    list_filter = ("vocabulary_set", "submitted_at")
+    list_filter = ("vocabulary_set", "quiz_type", "direction", "submitted_at")
     readonly_fields = (
         "id",
         "user",
         "vocabulary_set",
+        "quiz_type",
+        "direction",
         "question_count",
         "points_per_question",
         "total_points",

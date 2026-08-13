@@ -3,10 +3,11 @@ from django.contrib.auth import get_user_model
 from django.test import TestCase
 from unittest.mock import patch
 
-from vocabulary.models import Question, QuestionChoice, QuizAnswer
+from vocabulary.models import Question, QuestionChoice, QuizAnswer, QuizAttempt
 from vocabulary.services import (
     attempt_question_rows,
     choice_display_map,
+    create_attempt,
     create_quiz_attempt,
     grade_quiz_attempt,
     selected_choices_from_post,
@@ -160,4 +161,82 @@ class QuizTests(TestCase):
         self.assertEqual(
             set(retry.attempt_questions.values_list("question_id", flat=True)),
             set(wrong_ids),
+        )
+
+
+class TranslationQuizTests(TestCase):
+    def setUp(self):
+        import_fixture()
+        self.vocabulary_set = Question.objects.first().vocabulary_set
+        self.user = get_user_model().objects.create_user(
+            username="translator", email="translator@example.com", password="pass12345"
+        )
+
+    def create_translation(self, direction=QuizAttempt.ZH_TO_EN, count=10):
+        return create_attempt(
+            self.vocabulary_set,
+            count,
+            user=self.user,
+            quiz_type=QuizAttempt.TRANSLATION,
+            direction=direction,
+        )
+
+    def test_zh_to_en_has_chinese_prompts_and_four_unique_english_options(self):
+        attempt = self.create_translation()
+
+        for item in attempt.attempt_questions.select_related("question__word_sense__word"):
+            self.assertEqual(item.question_direction, QuizAttempt.ZH_TO_EN)
+            self.assertEqual(item.prompt_text, item.question.word_sense.meaning_zh)
+            self.assertEqual(len(item.option_texts), 4)
+            self.assertEqual(len(set(item.option_texts)), 4)
+            self.assertIn(item.question.word_sense.word.text, item.option_texts)
+
+    def test_en_to_zh_has_english_prompts_and_unique_chinese_options(self):
+        attempt = self.create_translation(QuizAttempt.EN_TO_ZH)
+
+        for item in attempt.attempt_questions.select_related("question__word_sense__word"):
+            self.assertEqual(item.question_direction, QuizAttempt.EN_TO_ZH)
+            self.assertEqual(item.prompt_text, item.question.word_sense.word.text)
+            self.assertEqual(len(item.option_texts), 4)
+            self.assertEqual(len(set(item.option_texts)), 4)
+            self.assertIn(item.question.word_sense.meaning_zh, item.option_texts)
+
+    def test_mixed_contains_balanced_shuffled_directions(self):
+        attempt = self.create_translation(QuizAttempt.MIXED)
+        directions = list(
+            attempt.attempt_questions.values_list("question_direction", flat=True)
+        )
+
+        self.assertEqual(directions.count(QuizAttempt.ZH_TO_EN), 5)
+        self.assertEqual(directions.count(QuizAttempt.EN_TO_ZH), 5)
+
+    def test_translation_questions_do_not_repeat_vocabulary(self):
+        attempt = self.create_translation(count=20)
+        sense_ids = list(
+            attempt.attempt_questions.values_list("question__word_sense_id", flat=True)
+        )
+
+        self.assertEqual(len(sense_ids), len(set(sense_ids)))
+
+    def test_rows_are_stable_when_same_attempt_is_loaded_again(self):
+        attempt = self.create_translation()
+        first = [(row["question_text"], row["options"]) for row in attempt_question_rows(attempt)]
+        attempt.refresh_from_db()
+        second = [(row["question_text"], row["options"]) for row in attempt_question_rows(attempt)]
+
+        self.assertEqual(first, second)
+
+    def test_translation_grading_uses_saved_correct_index(self):
+        attempt = self.create_translation(count=10)
+        answers = {
+            str(item.id): item.correct_option_index
+            for item in attempt.attempt_questions.all()
+        }
+
+        grade_quiz_attempt(attempt, answers)
+        attempt.refresh_from_db()
+
+        self.assertEqual(attempt.correct_count, 10)
+        self.assertTrue(
+            all(answer.selected_text for answer in QuizAnswer.objects.all())
         )

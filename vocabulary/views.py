@@ -19,6 +19,7 @@ from .models import ActiveSession, QuestionChoice, QuizAttempt, VocabularySet
 from .services import (
     attempt_question_rows,
     choice_display_map,
+    create_attempt,
     create_quiz_attempt,
     grade_quiz_attempt,
     import_missing_default_vocabulary,
@@ -209,10 +210,23 @@ def start_quiz(request, slug):
     if not request.user.is_authenticated:
         return redirect(f"{reverse('vocabulary:login')}?next={reverse('vocabulary:home')}")
     vocabulary_set = get_object_or_404(VocabularySet, slug=slug, is_published=True)
-    available_count = vocabulary_set.questions.filter(is_active=True).count()
     try:
+        quiz_type = request.POST.get("quiz_type", QuizAttempt.SENTENCE)
+        direction = request.POST.get("direction", "") if quiz_type == QuizAttempt.TRANSLATION else ""
+        available_questions = vocabulary_set.questions.filter(is_active=True)
+        available_count = (
+            available_questions.values("word_sense_id").distinct().count()
+            if quiz_type == QuizAttempt.TRANSLATION
+            else available_questions.count()
+        )
         question_count = parse_question_count(request.POST.get("question_count"), available_count)
-        attempt = create_quiz_attempt(vocabulary_set, question_count, user=request.user)
+        attempt = create_attempt(
+            vocabulary_set,
+            question_count,
+            user=request.user,
+            quiz_type=quiz_type,
+            direction=direction,
+        )
     except ValidationError as exc:
         messages.error(request, exc.messages[0] if hasattr(exc, "messages") else str(exc))
         return redirect("vocabulary:home")
@@ -288,17 +302,35 @@ def result(request, attempt_id):
         "answer",
         "answer__selected_choice",
     ):
-        correct_choice = attempt_question.question.choices.get(is_correct=True)
         answer = getattr(attempt_question, "answer", None)
-        selected_choice = answer.selected_choice if answer else None
-        display_map = choice_display_map(attempt_question)
         is_correct = bool(answer and answer.is_correct)
         if not is_correct:
             wrong_question_ids.append(attempt_question.question_id)
+        if attempt.quiz_type == QuizAttempt.TRANSLATION:
+            correct_text = attempt_question.option_texts[
+                attempt_question.correct_option_index
+            ]
+            rows.append(
+                {
+                    "attempt_question": attempt_question,
+                    "question": attempt_question.question,
+                    "question_text": attempt_question.prompt_text,
+                    "direction_label": attempt_question.get_question_direction_display(),
+                    "selected_text": answer.selected_text if answer else "",
+                    "correct_text": correct_text,
+                    "is_correct": is_correct,
+                }
+            )
+            continue
+        correct_choice = attempt_question.question.choices.get(is_correct=True)
+        selected_choice = answer.selected_choice if answer else None
+        display_map = choice_display_map(attempt_question)
         rows.append(
             {
                 "attempt_question": attempt_question,
                 "question": attempt_question.question,
+                "question_text": attempt_question.question.prompt,
+                "direction_label": "",
                 "answer": answer,
                 "selected_choice": selected_choice,
                 "selected_display_label": display_map.get(selected_choice.id)
@@ -337,10 +369,12 @@ def retry_wrong(request, attempt_id):
     ]
     if not wrong_question_ids:
         return redirect("vocabulary:result", attempt_id=attempt.id)
-    new_attempt = create_quiz_attempt(
+    new_attempt = create_attempt(
         attempt.vocabulary_set,
         len(wrong_question_ids),
         user=request.user,
         only_question_ids=wrong_question_ids,
+        quiz_type=attempt.quiz_type,
+        direction=attempt.direction,
     )
     return redirect("vocabulary:quiz", attempt_id=new_attempt.id)

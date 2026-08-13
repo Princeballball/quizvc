@@ -8,7 +8,8 @@
   <div class="quiz-heading">
     <div>
       <p class="eyebrow">{{ attempt.vocabulary_set.title }}</p>
-      <h1>單一選擇題</h1>
+      <h1>{% if attempt.quiz_type == "translation" %}單字翻譯測驗{% else %}單一選擇題{% endif %}</h1>
+      {% if attempt.quiz_type == "translation" %}<p>{{ attempt.get_direction_display }}</p>{% endif %}
       <p>一題 {{ attempt.points_per_question }} 分，共 {{ attempt.total_points }} 分</p>
     </div>
     <p class="answered-count" data-answered-count>已作答 0 / {{ attempt.question_count }}</p>
@@ -28,19 +29,20 @@
       <fieldset class="question-block" data-question-block>
         <legend>
           <span class="question-number">{{ row.attempt_question.display_order }}.</span>
-          {{ row.question.prompt }}
+          {{ row.question_text }}
         </legend>
+        {% if row.instruction %}<p class="question-instruction">{{ row.instruction }}</p>{% endif %}
         <div class="choices">
           {% for option in row.options %}
-            <label class="choice{% if row.selected_choice_id == option.choice.id|stringformat:'s' %} is-selected{% endif %}">
+            <label class="choice{% if row.selected_choice_id == option.value %} is-selected{% endif %}">
               <input
                 type="radio"
                 name="question_{{ row.attempt_question.id }}"
-                value="{{ option.choice.id }}"
-                {% if row.selected_choice_id == option.choice.id|stringformat:'s' %}checked{% endif %}
+                value="{{ option.value }}"
+                {% if row.selected_choice_id == option.value %}checked{% endif %}
               >
               <span class="choice-label">({{ option.display_label }})</span>
-              <span>{{ option.choice.text }}</span>
+              <span>{{ option.text }}</span>
             </label>
           {% endfor %}
         </div>
