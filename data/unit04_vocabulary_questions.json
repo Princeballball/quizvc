@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "word": "devote",
+    "part_of_speech": "verb",
+    "meaning_zh": "致力於",
+    "question": "She decided to _____ her life to helping children.",
+    "options": {
+      "A": "assign",
+      "B": "distinguish",
+      "C": "accomplish",
+      "D": "devote"
+    },
+    "answer_letter": "D",
+    "answer": "devote"
+  },
+  {
+    "id": 2,
+    "word": "devoted",
+    "part_of_speech": "adjective",
+    "meaning_zh": "忠實的",
+    "question": "Mr. Parker is a _____ husband and loving father.",
+    "options": {
+      "A": "sorrowful",
+      "B": "urgent",
+      "C": "financial",
+      "D": "devoted"
+    },
+    "answer_letter": "D",
+    "answer": "devoted"
+  },
+  {
+    "id": 3,
+    "word": "analyze",
+    "part_of_speech": "verb",
+    "meaning_zh": "分析；解析",
+    "question": "We need to _____ the problem before making a decision.",
+    "options": {
+      "A": "accompany",
+      "B": "analyze",
+      "C": "preserve",
+      "D": "assign"
+    },
+    "answer_letter": "B",
+    "answer": "analyze"
+  },
+  {
+    "id": 4,
+    "word": "analysis",
+    "part_of_speech": "noun",
+    "meaning_zh": "分析",
+    "question": "The scientist's final _____ showed that the water was safe.",
+    "options": {
+      "A": "assignment",
+      "B": "inspection",
+      "C": "analysis",
+      "D": "investigation"
+    },
+    "answer_letter": "C",
+    "answer": "analysis"
+  },
+  {
+    "id": 5,
+    "word": "essential",
+    "part_of_speech": "adjective",
+    "meaning_zh": "必要的；不可或缺的",
+    "question": "Clean water is _____ to human life.",
+    "options": {
+      "A": "distinct",
+      "B": "essential",
+      "C": "urgent",
+      "D": "sorrowful"
+    },
+    "answer_letter": "B",
+    "answer": "essential"
+  },
+  {
+    "id": 6,
+    "word": "essentially",
+    "part_of_speech": "adverb",
+    "meaning_zh": "本質上；基本上",
+    "question": "Although they look different, the two plans are _____ the same.",
+    "options": {
+      "A": "essentially",
+      "B": "objectively",
+      "C": "financially",
+      "D": "urgently"
+    },
+    "answer_letter": "A",
+    "answer": "essentially"
+  },
+  {
+    "id": 7,
+    "word": "vital",
+    "part_of_speech": "adjective",
+    "meaning_zh": "維持生命必需的；極重要的",
+    "question": "Regular exercise plays a _____ role in maintaining good health.",
+    "options": {
+      "A": "contrary",
+      "B": "sorrowful",
+      "C": "gigantic",
+      "D": "vital"
+    },
+    "answer_letter": "D",
+    "answer": "vital"
+  },
+  {
+    "id": 8,
+    "word": "sorrowful",
+    "part_of_speech": "adjective",
+    "meaning_zh": "悲傷的",
+    "question": "The _____ old man deeply missed his wife.",
+    "options": {
+      "A": "devoted",
+      "B": "tremendous",
+      "C": "financial",
+      "D": "sorrowful"
+    },
+    "answer_letter": "D",
+    "answer": "sorrowful"
+  },
+  {
+    "id": 9,
+    "word": "accomplish",
+    "part_of_speech": "verb",
+    "meaning_zh": "完成（任務）；達到（目標）",
+    "question": "Through teamwork, we can _____ our goal.",
+    "options": {
+      "A": "analyze",
+      "B": "accompany",
+      "C": "distinguish",
+      "D": "accomplish"
+    },
+    "answer_letter": "D",
+    "answer": "accomplish"
+  },
+  {
+    "id": 10,
+    "word": "accomplished",
+    "part_of_speech": "adjective",
+    "meaning_zh": "熟練的；有造詣的",
+    "question": "At the age of fifteen, Sandy was already an _____ pianist.",
+    "options": {
+      "A": "distinct",
+      "B": "sorrowful",
+      "C": "urgent",
+      "D": "accomplished"
+    },
+    "answer_letter": "D",
+    "answer": "accomplished"
+  },
+  {
+    "id": 11,
+    "word": "accomplishment",
+    "part_of_speech": "noun",
+    "meaning_zh": "完成；實現；成就",
+    "question": "Landing on the moon was a great _____ for humanity.",
+    "options": {
+      "A": "assignment",
+      "B": "exception",
+      "C": "rejection",
+      "D": "accomplishment"
+    },
+    "answer_letter": "D",
+    "answer": "accomplishment"
+  },
+  {
+    "id": 12,
+    "word": "intend",
+    "part_of_speech": "verb",
+    "meaning_zh": "意欲；想要；意指；意謂；針對",
+    "question": "I didn't _____ to upset you.",
+    "options": {
+      "A": "preserve",
+      "B": "emerge",
+      "C": "assign",
+      "D": "intend"
+    },
+    "answer_letter": "D",
+    "answer": "intend"
+  },
+  {
+    "id": 13,
+    "word": "intention",
+    "part_of_speech": "noun",
+    "meaning_zh": "意圖",
+    "question": "It was not my _____ to upset you.",
+    "options": {
+      "A": "intention",
+      "B": "comment",
+      "C": "exception",
+      "D": "objective"
+    },
+    "answer_letter": "A",
+    "answer": "intention"
+  },
+  {
+    "id": 14,
+    "word": "emerge",
+    "part_of_speech": "verb",
+    "meaning_zh": "出現；冒出",
+    "question": "A man suddenly began to _____ from behind the door.",
+    "options": {
+      "A": "emerge",
+      "B": "finance",
+      "C": "urge",
+      "D": "devote"
+    },
+    "answer_letter": "A",
+    "answer": "emerge"
+  },
+  {
+    "id": 15,
+    "word": "objective",
+    "part_of_speech": "noun",
+    "meaning_zh": "目標；客觀的",
+    "question": "Our main _____ is to finish the project by Friday.",
+    "options": {
+      "A": "objective",
+      "B": "impact",
+      "C": "intention",
+      "D": "comment"
+    },
+    "answer_letter": "A",
+    "answer": "objective"
+  },
+  {
+    "id": 16,
+    "word": "finance",
+    "part_of_speech": "verb",
+    "meaning_zh": "財政；財務；提供資金",
+    "question": "We need more businesses to _____ our project.",
+    "options": {
+      "A": "analyze",
+      "B": "accompany",
+      "C": "finance",
+      "D": "preserve"
+    },
+    "answer_letter": "C",
+    "answer": "finance"
+  },
+  {
+    "id": 17,
+    "word": "financial",
+    "part_of_speech": "adjective",
+    "meaning_zh": "金融的；財務的",
+    "question": "The company is facing serious _____ problems.",
+    "options": {
+      "A": "financial",
+      "B": "gigantic",
+      "C": "philosophical",
+      "D": "sorrowful"
+    },
+    "answer_letter": "A",
+    "answer": "financial"
+  },
+  {
+    "id": 18,
+    "word": "philosophy",
+    "part_of_speech": "noun",
+    "meaning_zh": "哲學；人生觀",
+    "question": "She studied _____ at university.",
+    "options": {
+      "A": "analysis",
+      "B": "preservation",
+      "C": "philosophy",
+      "D": "finance"
+    },
+    "answer_letter": "C",
+    "answer": "philosophy"
+  },
+  {
+    "id": 19,
+    "word": "philosopher",
+    "part_of_speech": "noun",
+    "meaning_zh": "哲學家；哲人",
+    "question": "Confucius was a famous _____ in ancient China.",
+    "options": {
+      "A": "philosopher",
+      "B": "minister",
+      "C": "companion",
+      "D": "applicant"
+    },
+    "answer_letter": "A",
+    "answer": "philosopher"
+  },
+  {
+    "id": 20,
+    "word": "philosophical",
+    "part_of_speech": "adjective",
+    "meaning_zh": "哲學的；理智的；看得開的",
+    "question": "The students spent hours discussing _____ questions.",
+    "options": {
+      "A": "urgent",
+      "B": "financial",
+      "C": "distinct",
+      "D": "philosophical"
+    },
+    "answer_letter": "D",
+    "answer": "philosophical"
+  },
+  {
+    "id": 21,
+    "word": "contrast",
+    "part_of_speech": "verb",
+    "meaning_zh": "對比；差異；對比",
+    "question": "The teacher asked us to _____ the two paintings.",
+    "options": {
+      "A": "contrast",
+      "B": "analyze",
+      "C": "assign",
+      "D": "accompany"
+    },
+    "answer_letter": "A",
+    "answer": "contrast"
+  },
+  {
+    "id": 22,
+    "word": "contrary",
+    "part_of_speech": "adjective",
+    "meaning_zh": "相反的；對立的",
+    "question": "His actions were _____ to his promises.",
+    "options": {
+      "A": "vital",
+      "B": "gigantic",
+      "C": "devoted",
+      "D": "contrary"
+    },
+    "answer_letter": "D",
+    "answer": "contrary"
+  },
+  {
+    "id": 23,
+    "word": "accompany",
+    "part_of_speech": "verb",
+    "meaning_zh": "陪伴",
+    "question": "Let me _____ you to the station.",
+    "options": {
+      "A": "accompany",
+      "B": "finance",
+      "C": "preserve",
+      "D": "distinguish"
+    },
+    "answer_letter": "A",
+    "answer": "accompany"
+  },
+  {
+    "id": 24,
+    "word": "companion",
+    "part_of_speech": "noun",
+    "meaning_zh": "伴侶；同伴",
+    "question": "The dog has been her faithful _____ for many years.",
+    "options": {
+      "A": "minister",
+      "B": "philosopher",
+      "C": "companion",
+      "D": "objective"
+    },
+    "answer_letter": "C",
+    "answer": "companion"
+  },
+  {
+    "id": 25,
+    "word": "assign",
+    "part_of_speech": "verb",
+    "meaning_zh": "分配；指派",
+    "question": "The teacher will _____ us a new task tomorrow.",
+    "options": {
+      "A": "assign",
+      "B": "devote",
+      "C": "urge",
+      "D": "emerge"
+    },
+    "answer_letter": "A",
+    "answer": "assign"
+  },
+  {
+    "id": 26,
+    "word": "assignment",
+    "part_of_speech": "noun",
+    "meaning_zh": "任務；派定的工作；指定作業或功課",
+    "question": "Please finish your _____ before the next class.",
+    "options": {
+      "A": "rejection",
+      "B": "accomplishment",
+      "C": "assignment",
+      "D": "inspection"
+    },
+    "answer_letter": "C",
+    "answer": "assignment"
+  },
+  {
+    "id": 27,
+    "word": "preserve",
+    "part_of_speech": "verb",
+    "meaning_zh": "保存；維持；醃製",
+    "question": "The museum works to _____ ancient artifacts for future generations.",
+    "options": {
+      "A": "preserve",
+      "B": "assign",
+      "C": "emerge",
+      "D": "analyze"
+    },
+    "answer_letter": "A",
+    "answer": "preserve"
+  },
+  {
+    "id": 28,
+    "word": "preservation",
+    "part_of_speech": "noun",
+    "meaning_zh": "保存；保護",
+    "question": "The _____ of historical buildings is important.",
+    "options": {
+      "A": "preservation",
+      "B": "investigation",
+      "C": "assignment",
+      "D": "rejection"
+    },
+    "answer_letter": "A",
+    "answer": "preservation"
+  },
+  {
+    "id": 29,
+    "word": "distinguish",
+    "part_of_speech": "verb",
+    "meaning_zh": "分辨；區別；使揚名",
+    "question": "Can you _____ the twins from each other?",
+    "options": {
+      "A": "finance",
+      "B": "distinguish",
+      "C": "accompany",
+      "D": "devote"
+    },
+    "answer_letter": "B",
+    "answer": "distinguish"
+  },
+  {
+    "id": 30,
+    "word": "distinguished",
+    "part_of_speech": "adjective",
+    "meaning_zh": "傑出的；著名的",
+    "question": "The award was presented to a _____ scientist.",
+    "options": {
+      "A": "distinguished",
+      "B": "contrary",
+      "C": "sorrowful",
+      "D": "urgent"
+    },
+    "answer_letter": "A",
+    "answer": "distinguished"
+  },
+  {
+    "id": 31,
+    "word": "distinct",
+    "part_of_speech": "adjective",
+    "meaning_zh": "清楚的；不同的；獨特的",
+    "question": "The two species have _____ characteristics.",
+    "options": {
+      "A": "vital",
+      "B": "distinct",
+      "C": "financial",
+      "D": "gigantic"
+    },
+    "answer_letter": "B",
+    "answer": "distinct"
+  },
+  {
+    "id": 32,
+    "word": "exception",
+    "part_of_speech": "noun",
+    "meaning_zh": "例外；除外",
+    "question": "Everyone must follow the rule, with no _____.",
+    "options": {
+      "A": "assignment",
+      "B": "comment",
+      "C": "impact",
+      "D": "exception"
+    },
+    "answer_letter": "D",
+    "answer": "exception"
+  },
+  {
+    "id": 33,
+    "word": "comment",
+    "part_of_speech": "verb",
+    "meaning_zh": "評語；批評；評論",
+    "question": "The teacher asked me to _____ on the article.",
+    "options": {
+      "A": "comment",
+      "B": "distinguish",
+      "C": "preserve",
+      "D": "finance"
+    },
+    "answer_letter": "A",
+    "answer": "comment"
+  },
+  {
+    "id": 34,
+    "word": "impact",
+    "part_of_speech": "noun",
+    "meaning_zh": "影響；衝擊",
+    "question": "The new policy may have a major _____ on small businesses.",
+    "options": {
+      "A": "intention",
+      "B": "impact",
+      "C": "analysis",
+      "D": "exception"
+    },
+    "answer_letter": "B",
+    "answer": "impact"
+  },
+  {
+    "id": 35,
+    "word": "investigation",
+    "part_of_speech": "noun",
+    "meaning_zh": "調查",
+    "question": "The police opened an _____ into the accident.",
+    "options": {
+      "A": "preservation",
+      "B": "investigation",
+      "C": "inspection",
+      "D": "assignment"
+    },
+    "answer_letter": "B",
+    "answer": "investigation"
+  },
+  {
+    "id": 36,
+    "word": "inspection",
+    "part_of_speech": "noun",
+    "meaning_zh": "檢查；查驗",
+    "question": "The building failed its safety _____.",
+    "options": {
+      "A": "inspection",
+      "B": "rejection",
+      "C": "investigation",
+      "D": "accomplishment"
+    },
+    "answer_letter": "A",
+    "answer": "inspection"
+  },
+  {
+    "id": 37,
+    "word": "rejection",
+    "part_of_speech": "noun",
+    "meaning_zh": "拒絕；推辭",
+    "question": "He was disappointed by the _____ of his application.",
+    "options": {
+      "A": "impact",
+      "B": "inspection",
+      "C": "rejection",
+      "D": "exception"
+    },
+    "answer_letter": "C",
+    "answer": "rejection"
+  },
+  {
+    "id": 38,
+    "word": "vast",
+    "part_of_speech": "adjective",
+    "meaning_zh": "廣闊的；巨大的",
+    "question": "The country has a _____ amount of natural resources.",
+    "options": {
+      "A": "urgent",
+      "B": "distinct",
+      "C": "devoted",
+      "D": "vast"
+    },
+    "answer_letter": "D",
+    "answer": "vast"
+  },
+  {
+    "id": 39,
+    "word": "gigantic",
+    "part_of_speech": "adjective",
+    "meaning_zh": "巨大的；龐大的",
+    "question": "Scientists discovered a _____ stone statue on the island.",
+    "options": {
+      "A": "financial",
+      "B": "contrary",
+      "C": "gigantic",
+      "D": "sorrowful"
+    },
+    "answer_letter": "C",
+    "answer": "gigantic"
+  },
+  {
+    "id": 40,
+    "word": "tremendous",
+    "part_of_speech": "adjective",
+    "meaning_zh": "龐大的；極大的",
+    "question": "The team made _____ progress this year.",
+    "options": {
+      "A": "urgent",
+      "B": "devoted",
+      "C": "tremendous",
+      "D": "distinct"
+    },
+    "answer_letter": "C",
+    "answer": "tremendous"
+  },
+  {
+    "id": 41,
+    "word": "enormous",
+    "part_of_speech": "adjective",
+    "meaning_zh": "巨大的",
+    "question": "The project requires an _____ amount of money.",
+    "options": {
+      "A": "enormous",
+      "B": "sorrowful",
+      "C": "contrary",
+      "D": "financial"
+    },
+    "answer_letter": "A",
+    "answer": "enormous"
+  },
+  {
+    "id": 42,
+    "word": "urge",
+    "part_of_speech": "verb",
+    "meaning_zh": "力勸；激勵",
+    "question": "Doctors _____ people to exercise regularly.",
+    "options": {
+      "A": "assign",
+      "B": "finance",
+      "C": "urge",
+      "D": "emerge"
+    },
+    "answer_letter": "C",
+    "answer": "urge"
+  },
+  {
+    "id": 43,
+    "word": "urgent",
+    "part_of_speech": "adjective",
+    "meaning_zh": "緊急的；迫切的",
+    "question": "This is an _____ problem that needs attention now.",
+    "options": {
+      "A": "philosophical",
+      "B": "urgent",
+      "C": "devoted",
+      "D": "vast"
+    },
+    "answer_letter": "B",
+    "answer": "urgent"
+  },
+  {
+    "id": 44,
+    "word": "minister",
+    "part_of_speech": "noun",
+    "meaning_zh": "部長；牧師",
+    "question": "The _____ of Education announced a new policy.",
+    "options": {
+      "A": "companion",
+      "B": "philosopher",
+      "C": "objective",
+      "D": "minister"
+    },
+    "answer_letter": "D",
+    "answer": "minister"
+  },
+  {
+    "id": 45,
+    "word": "ministry",
+    "part_of_speech": "noun",
+    "meaning_zh": "（政府）部；牧師職務",
+    "question": "The _____ of Education released the new report.",
+    "options": {
+      "A": "ministry",
+      "B": "investigation",
+      "C": "preservation",
+      "D": "assignment"
+    },
+    "answer_letter": "A",
+    "answer": "ministry"
+  },
+  {
+    "id": 46,
+    "word": "potential",
+    "part_of_speech": "noun",
+    "meaning_zh": "潛力；潛在的",
+    "question": "She has the _____ to become a great athlete.",
+    "options": {
+      "A": "potential",
+      "B": "intention",
+      "C": "impact",
+      "D": "exception"
+    },
+    "answer_letter": "A",
+    "answer": "potential"
+  }
+]
