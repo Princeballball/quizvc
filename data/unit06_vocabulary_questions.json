@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "word": "assistance",
+    "part_of_speech": "noun",
+    "meaning_zh": "幫助；援助",
+    "question": "We all came to John's _____ when we learned that he was in trouble.",
+    "options": {
+      "A": "distribution",
+      "B": "approval",
+      "C": "competition",
+      "D": "assistance"
+    },
+    "answer_letter": "D",
+    "answer": "assistance"
+  },
+  {
+    "id": 2,
+    "word": "gulf",
+    "part_of_speech": "noun",
+    "meaning_zh": "海灣；差異",
+    "question": "The _____ between the rich and the poor is widening.",
+    "options": {
+      "A": "panel",
+      "B": "shift",
+      "C": "bond",
+      "D": "gulf"
+    },
+    "answer_letter": "D",
+    "answer": "gulf"
+  },
+  {
+    "id": 3,
+    "word": "intense",
+    "part_of_speech": "adjective",
+    "meaning_zh": "強烈的",
+    "question": "The _____ heat made it difficult to work outside.",
+    "options": {
+      "A": "committed",
+      "B": "intense",
+      "C": "competitive",
+      "D": "critical"
+    },
+    "answer_letter": "B",
+    "answer": "intense"
+  },
+  {
+    "id": 4,
+    "word": "intensity",
+    "part_of_speech": "noun",
+    "meaning_zh": "強度；熱切",
+    "question": "I can't stand the _____ of the heat.",
+    "options": {
+      "A": "determination",
+      "B": "intelligence",
+      "C": "intensity",
+      "D": "criticism"
+    },
+    "answer_letter": "C",
+    "answer": "intensity"
+  },
+  {
+    "id": 5,
+    "word": "intensive",
+    "part_of_speech": "adjective",
+    "meaning_zh": "徹底的；密集的",
+    "question": "The police began an _____ search for the missing child.",
+    "options": {
+      "A": "competitive",
+      "B": "intensive",
+      "C": "intellectual",
+      "D": "critical"
+    },
+    "answer_letter": "B",
+    "answer": "intensive"
+  },
+  {
+    "id": 6,
+    "word": "competition",
+    "part_of_speech": "noun",
+    "meaning_zh": "競爭；比賽",
+    "question": "Thirty students are in _____ with each other for the championship.",
+    "options": {
+      "A": "competition",
+      "B": "resolution",
+      "C": "assistance",
+      "D": "approval"
+    },
+    "answer_letter": "A",
+    "answer": "competition"
+  },
+  {
+    "id": 7,
+    "word": "competitive",
+    "part_of_speech": "adjective",
+    "meaning_zh": "競爭的",
+    "question": "The boss admired Brian's _____ spirit.",
+    "options": {
+      "A": "critical",
+      "B": "intense",
+      "C": "committed",
+      "D": "competitive"
+    },
+    "answer_letter": "D",
+    "answer": "competitive"
+  },
+  {
+    "id": 8,
+    "word": "competitor",
+    "part_of_speech": "noun",
+    "meaning_zh": "競爭者；參賽者",
+    "question": "There were 300 _____ in the marathon.",
+    "options": {
+      "A": "composer",
+      "B": "critic",
+      "C": "colleague",
+      "D": "competitor"
+    },
+    "answer_letter": "D",
+    "answer": "competitor"
+  },
+  {
+    "id": 9,
+    "word": "adjust",
+    "part_of_speech": "verb",
+    "meaning_zh": "調整；調節；適應",
+    "question": "It took me several weeks to _____ to the new school.",
+    "options": {
+      "A": "compose",
+      "B": "resolve",
+      "C": "expose",
+      "D": "adjust"
+    },
+    "answer_letter": "D",
+    "answer": "adjust"
+  },
+  {
+    "id": 10,
+    "word": "adjustment",
+    "part_of_speech": "noun",
+    "meaning_zh": "調整；調節；適應",
+    "question": "Living in another country can require a big _____.",
+    "options": {
+      "A": "resolution",
+      "B": "approval",
+      "C": "distribution",
+      "D": "adjustment"
+    },
+    "answer_letter": "D",
+    "answer": "adjustment"
+  },
+  {
+    "id": 11,
+    "word": "distribute",
+    "part_of_speech": "verb",
+    "meaning_zh": "分發；分配",
+    "question": "The teacher will _____ the test papers to the class.",
+    "options": {
+      "A": "adjust",
+      "B": "compose",
+      "C": "appoint",
+      "D": "distribute"
+    },
+    "answer_letter": "D",
+    "answer": "distribute"
+  },
+  {
+    "id": 12,
+    "word": "distribution",
+    "part_of_speech": "noun",
+    "meaning_zh": "分配；分布",
+    "question": "The _____ of wealth is uneven in that country.",
+    "options": {
+      "A": "possession",
+      "B": "competition",
+      "C": "determination",
+      "D": "distribution"
+    },
+    "answer_letter": "D",
+    "answer": "distribution"
+  },
+  {
+    "id": 13,
+    "word": "criticize",
+    "part_of_speech": "verb",
+    "meaning_zh": "批評",
+    "question": "The newspaper began to _____ the new policy.",
+    "options": {
+      "A": "criticize",
+      "B": "appoint",
+      "C": "possess",
+      "D": "approve"
+    },
+    "answer_letter": "A",
+    "answer": "criticize"
+  },
+  {
+    "id": 14,
+    "word": "criticism",
+    "part_of_speech": "noun",
+    "meaning_zh": "批評；評論",
+    "question": "The new tax law has been the subject of much _____.",
+    "options": {
+      "A": "criticism",
+      "B": "approval",
+      "C": "resolution",
+      "D": "assistance"
+    },
+    "answer_letter": "A",
+    "answer": "criticism"
+  },
+  {
+    "id": 15,
+    "word": "critical",
+    "part_of_speech": "adjective",
+    "meaning_zh": "危急的；批評的",
+    "question": "The patient is still in _____ condition.",
+    "options": {
+      "A": "critical",
+      "B": "intellectual",
+      "C": "competitive",
+      "D": "committed"
+    },
+    "answer_letter": "A",
+    "answer": "critical"
+  },
+  {
+    "id": 16,
+    "word": "critic",
+    "part_of_speech": "noun",
+    "meaning_zh": "評論家；愛挑剔的人",
+    "question": "The movie _____ gave the film a poor review.",
+    "options": {
+      "A": "composer",
+      "B": "colleague",
+      "C": "critic",
+      "D": "competitor"
+    },
+    "answer_letter": "C",
+    "answer": "critic"
+  },
+  {
+    "id": 17,
+    "word": "largely",
+    "part_of_speech": "adverb",
+    "meaning_zh": "大大地；大部分",
+    "question": "Our success is _____ due to Kelly's help.",
+    "options": {
+      "A": "largely",
+      "B": "intellectually",
+      "C": "intensively",
+      "D": "critically"
+    },
+    "answer_letter": "A",
+    "answer": "largely"
+  },
+  {
+    "id": 18,
+    "word": "commit",
+    "part_of_speech": "verb",
+    "meaning_zh": "犯（罪）；奉獻",
+    "question": "He decided to _____ more time to studying English.",
+    "options": {
+      "A": "compose",
+      "B": "appoint",
+      "C": "commit",
+      "D": "resolve"
+    },
+    "answer_letter": "C",
+    "answer": "commit"
+  },
+  {
+    "id": 19,
+    "word": "committed",
+    "part_of_speech": "adjective",
+    "meaning_zh": "盡力的；致力的",
+    "question": "The research team is _____ to finding a cure.",
+    "options": {
+      "A": "committed",
+      "B": "competitive",
+      "C": "critical",
+      "D": "intense"
+    },
+    "answer_letter": "A",
+    "answer": "committed"
+  },
+  {
+    "id": 20,
+    "word": "characteristic",
+    "part_of_speech": "noun",
+    "meaning_zh": "特徵；典型",
+    "question": "Patience is an important _____ of a good nurse.",
+    "options": {
+      "A": "possession",
+      "B": "approval",
+      "C": "composition",
+      "D": "characteristic"
+    },
+    "answer_letter": "D",
+    "answer": "characteristic"
+  },
+  {
+    "id": 21,
+    "word": "approval",
+    "part_of_speech": "noun",
+    "meaning_zh": "贊成；同意",
+    "question": "The board of directors gave final _____ to the plan.",
+    "options": {
+      "A": "approval",
+      "B": "competition",
+      "C": "criticism",
+      "D": "assistance"
+    },
+    "answer_letter": "A",
+    "answer": "approval"
+  },
+  {
+    "id": 22,
+    "word": "appoint",
+    "part_of_speech": "verb",
+    "meaning_zh": "選定；指定；指派",
+    "question": "The coach will _____ John as captain of the team.",
+    "options": {
+      "A": "approve",
+      "B": "distribute",
+      "C": "compose",
+      "D": "appoint"
+    },
+    "answer_letter": "D",
+    "answer": "appoint"
+  },
+  {
+    "id": 23,
+    "word": "appointment",
+    "part_of_speech": "noun",
+    "meaning_zh": "約定；職位；任命",
+    "question": "I made an _____ with my doctor for seven this evening.",
+    "options": {
+      "A": "appointment",
+      "B": "distribution",
+      "C": "resolution",
+      "D": "adjustment"
+    },
+    "answer_letter": "A",
+    "answer": "appointment"
+  },
+  {
+    "id": 24,
+    "word": "panel",
+    "part_of_speech": "noun",
+    "meaning_zh": "嵌板；儀表板；專題討論小組",
+    "question": "A _____ of judges met to discuss the case.",
+    "options": {
+      "A": "gulf",
+      "B": "bond",
+      "C": "panel",
+      "D": "orchestra"
+    },
+    "answer_letter": "C",
+    "answer": "panel"
+  },
+  {
+    "id": 25,
+    "word": "expose",
+    "part_of_speech": "verb",
+    "meaning_zh": "暴露；接觸",
+    "question": "Do not _____ the film to direct sunlight.",
+    "options": {
+      "A": "expose",
+      "B": "possess",
+      "C": "adjust",
+      "D": "resolve"
+    },
+    "answer_letter": "A",
+    "answer": "expose"
+  },
+  {
+    "id": 26,
+    "word": "exposure",
+    "part_of_speech": "noun",
+    "meaning_zh": "暴露；曝曬；接觸",
+    "question": "Too much _____ to sunlight can cause skin problems.",
+    "options": {
+      "A": "competition",
+      "B": "possession",
+      "C": "exposure",
+      "D": "approval"
+    },
+    "answer_letter": "C",
+    "answer": "exposure"
+  },
+  {
+    "id": 27,
+    "word": "possess",
+    "part_of_speech": "verb",
+    "meaning_zh": "擁有；持有",
+    "question": "The police arrested the man for _____ illegal drugs.",
+    "options": {
+      "A": "possess",
+      "B": "composing",
+      "C": "appointing",
+      "D": "exposing"
+    },
+    "answer_letter": "A",
+    "answer": "possess"
+  },
+  {
+    "id": 28,
+    "word": "possession",
+    "part_of_speech": "noun",
+    "meaning_zh": "擁有；財產",
+    "question": "The bank took _____ of the debtor's home.",
+    "options": {
+      "A": "possession",
+      "B": "exposure",
+      "C": "distribution",
+      "D": "resolution"
+    },
+    "answer_letter": "A",
+    "answer": "possession"
+  },
+  {
+    "id": 29,
+    "word": "intellectual",
+    "part_of_speech": "adjective",
+    "meaning_zh": "智力的；知識分子的",
+    "question": "The boy showed impressive _____ ability.",
+    "options": {
+      "A": "intensive",
+      "B": "intellectual",
+      "C": "competitive",
+      "D": "critical"
+    },
+    "answer_letter": "B",
+    "answer": "intellectual"
+  },
+  {
+    "id": 30,
+    "word": "intelligence",
+    "part_of_speech": "noun",
+    "meaning_zh": "聰明才智；情報",
+    "question": "This job requires a high degree of _____.",
+    "options": {
+      "A": "intelligence",
+      "B": "criticism",
+      "C": "determination",
+      "D": "intensity"
+    },
+    "answer_letter": "A",
+    "answer": "intelligence"
+  },
+  {
+    "id": 31,
+    "word": "copper",
+    "part_of_speech": "noun",
+    "meaning_zh": "紅銅",
+    "question": "Most coins contain some _____.",
+    "options": {
+      "A": "gulf",
+      "B": "copper",
+      "C": "panel",
+      "D": "bond"
+    },
+    "answer_letter": "B",
+    "answer": "copper"
+  },
+  {
+    "id": 32,
+    "word": "shift",
+    "part_of_speech": "noun",
+    "meaning_zh": "轉移；輪班",
+    "question": "I work on the night _____ this week.",
+    "options": {
+      "A": "bond",
+      "B": "panel",
+      "C": "gulf",
+      "D": "shift"
+    },
+    "answer_letter": "D",
+    "answer": "shift"
+  },
+  {
+    "id": 33,
+    "word": "resolve",
+    "part_of_speech": "verb",
+    "meaning_zh": "解決；下決心",
+    "question": "We did all we could to _____ the dispute.",
+    "options": {
+      "A": "resolve",
+      "B": "expose",
+      "C": "appoint",
+      "D": "adjust"
+    },
+    "answer_letter": "A",
+    "answer": "resolve"
+  },
+  {
+    "id": 34,
+    "word": "resolution",
+    "part_of_speech": "noun",
+    "meaning_zh": "志願；期望；決心",
+    "question": "Have you made any New Year's _____?",
+    "options": {
+      "A": "distribution",
+      "B": "resolution",
+      "C": "approval",
+      "D": "adjustment"
+    },
+    "answer_letter": "B",
+    "answer": "resolution"
+  },
+  {
+    "id": 35,
+    "word": "determination",
+    "part_of_speech": "noun",
+    "meaning_zh": "決心",
+    "question": "Ted's _____ to quit smoking was very strong.",
+    "options": {
+      "A": "criticism",
+      "B": "determination",
+      "C": "intelligence",
+      "D": "intensity"
+    },
+    "answer_letter": "B",
+    "answer": "determination"
+  },
+  {
+    "id": 36,
+    "word": "orchestra",
+    "part_of_speech": "noun",
+    "meaning_zh": "管弦樂團",
+    "question": "The _____ gave a wonderful performance last night.",
+    "options": {
+      "A": "orchestra",
+      "B": "competition",
+      "C": "panel",
+      "D": "distribution"
+    },
+    "answer_letter": "A",
+    "answer": "orchestra"
+  },
+  {
+    "id": 37,
+    "word": "compose",
+    "part_of_speech": "verb",
+    "meaning_zh": "組成；構成；譜曲；寫作",
+    "question": "Beethoven _____ nine symphonies.",
+    "options": {
+      "A": "distributed",
+      "B": "appointed",
+      "C": "compose",
+      "D": "resolved"
+    },
+    "answer_letter": "C",
+    "answer": "compose"
+  },
+  {
+    "id": 38,
+    "word": "composer",
+    "part_of_speech": "noun",
+    "meaning_zh": "作曲家",
+    "question": "Beethoven was a famous _____.",
+    "options": {
+      "A": "critic",
+      "B": "colleague",
+      "C": "competitor",
+      "D": "composer"
+    },
+    "answer_letter": "D",
+    "answer": "composer"
+  },
+  {
+    "id": 39,
+    "word": "composition",
+    "part_of_speech": "noun",
+    "meaning_zh": "成分；樂曲；作文",
+    "question": "The scientists analyzed the rock to determine its _____.",
+    "options": {
+      "A": "possession",
+      "B": "distribution",
+      "C": "composition",
+      "D": "resolution"
+    },
+    "answer_letter": "C",
+    "answer": "composition"
+  },
+  {
+    "id": 40,
+    "word": "colleague",
+    "part_of_speech": "noun",
+    "meaning_zh": "同事",
+    "question": "John has difficulty getting along with his _____.",
+    "options": {
+      "A": "critics",
+      "B": "competitors",
+      "C": "colleague",
+      "D": "composers"
+    },
+    "answer_letter": "C",
+    "answer": "colleague"
+  },
+  {
+    "id": 41,
+    "word": "proposal",
+    "part_of_speech": "noun",
+    "meaning_zh": "提議；建議；求婚",
+    "question": "The _____ to close the hospital was rejected.",
+    "options": {
+      "A": "proposal",
+      "B": "approval",
+      "C": "criticism",
+      "D": "resolution"
+    },
+    "answer_letter": "A",
+    "answer": "proposal"
+  },
+  {
+    "id": 42,
+    "word": "liar",
+    "part_of_speech": "noun",
+    "meaning_zh": "說謊者",
+    "question": "I don't like to make friends with _____.",
+    "options": {
+      "A": "critics",
+      "B": "colleagues",
+      "C": "liar",
+      "D": "competitors"
+    },
+    "answer_letter": "C",
+    "answer": "liar"
+  }
+]
