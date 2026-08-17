@@ -1,0 +1,692 @@
+[
+  {
+    "id": 1,
+    "word": "occupy",
+    "part_of_speech": "verb",
+    "meaning_zh": "擁有（某職務）；占據；使忙碌",
+    "question": "Large boxes _____ most of the space in the small room.",
+    "options": {
+      "A": "eliminate",
+      "B": "illustrate",
+      "C": "expand",
+      "D": "occupy"
+    },
+    "answer_letter": "D",
+    "answer": "occupy"
+  },
+  {
+    "id": 2,
+    "word": "occupation",
+    "part_of_speech": "noun",
+    "meaning_zh": "職業；占領",
+    "question": "I'm a teacher by _____.",
+    "options": {
+      "A": "promotion",
+      "B": "demonstration",
+      "C": "reservation",
+      "D": "occupation"
+    },
+    "answer_letter": "D",
+    "answer": "occupation"
+  },
+  {
+    "id": 3,
+    "word": "explanation",
+    "part_of_speech": "noun",
+    "meaning_zh": "解釋；說明",
+    "question": "The teacher gave a satisfactory _____ of the process.",
+    "options": {
+      "A": "illustration",
+      "B": "explanation",
+      "C": "consequence",
+      "D": "suggestion"
+    },
+    "answer_letter": "B",
+    "answer": "explanation"
+  },
+  {
+    "id": 4,
+    "word": "initial",
+    "part_of_speech": "adjective",
+    "meaning_zh": "初期的；最初的",
+    "question": "Paul's _____ effort was a failure, but he kept trying.",
+    "options": {
+      "A": "relevant",
+      "B": "adequate",
+      "C": "initial",
+      "D": "eventual"
+    },
+    "answer_letter": "C",
+    "answer": "initial"
+  },
+  {
+    "id": 5,
+    "word": "initially",
+    "part_of_speech": "adverb",
+    "meaning_zh": "開始時；最初",
+    "question": "_____, Andy was nice to Nancy, but eventually he left her.",
+    "options": {
+      "A": "Consequently",
+      "B": "initially",
+      "C": "Eventually",
+      "D": "Despite"
+    },
+    "answer_letter": "B",
+    "answer": "initially"
+  },
+  {
+    "id": 6,
+    "word": "estimate",
+    "part_of_speech": "noun",
+    "meaning_zh": "估計",
+    "question": "Please give me a rough _____ of how much time you'll need.",
+    "options": {
+      "A": "estimate",
+      "B": "consequence",
+      "C": "formula",
+      "D": "option"
+    },
+    "answer_letter": "A",
+    "answer": "estimate"
+  },
+  {
+    "id": 7,
+    "word": "expand",
+    "part_of_speech": "verb",
+    "meaning_zh": "擴大；增加",
+    "question": "The company plans to _____ its business overseas next year.",
+    "options": {
+      "A": "eliminate",
+      "B": "occupy",
+      "C": "waken",
+      "D": "expand"
+    },
+    "answer_letter": "D",
+    "answer": "expand"
+  },
+  {
+    "id": 8,
+    "word": "expansion",
+    "part_of_speech": "noun",
+    "meaning_zh": "擴大；擴建",
+    "question": "The building's _____ took two years to complete.",
+    "options": {
+      "A": "occupation",
+      "B": "promotion",
+      "C": "reservation",
+      "D": "expansion"
+    },
+    "answer_letter": "D",
+    "answer": "expansion"
+  },
+  {
+    "id": 9,
+    "word": "consequence",
+    "part_of_speech": "noun",
+    "meaning_zh": "結果；重要性",
+    "question": "Don't worry about the matter. It's of no _____ to you.",
+    "options": {
+      "A": "emphasis",
+      "B": "option",
+      "C": "formula",
+      "D": "consequence"
+    },
+    "answer_letter": "D",
+    "answer": "consequence"
+  },
+  {
+    "id": 10,
+    "word": "consequent",
+    "part_of_speech": "adjective",
+    "meaning_zh": "由……的原因而發生的；必然的",
+    "question": "The landslide was _____ on the heavy rains.",
+    "options": {
+      "A": "adequate",
+      "B": "eventual",
+      "C": "relevant",
+      "D": "consequent"
+    },
+    "answer_letter": "D",
+    "answer": "consequent"
+  },
+  {
+    "id": 11,
+    "word": "consequently",
+    "part_of_speech": "adverb",
+    "meaning_zh": "因此；所以",
+    "question": "It rained, and _____ our picnic was postponed.",
+    "options": {
+      "A": "initially",
+      "B": "eventually",
+      "C": "despite",
+      "D": "consequently"
+    },
+    "answer_letter": "D",
+    "answer": "consequently"
+  },
+  {
+    "id": 12,
+    "word": "convince",
+    "part_of_speech": "verb",
+    "meaning_zh": "使確信；說服",
+    "question": "How can I _____ Ted of the dangers of running a red light?",
+    "options": {
+      "A": "demonstrate",
+      "B": "illustrate",
+      "C": "instruct",
+      "D": "convince"
+    },
+    "answer_letter": "D",
+    "answer": "convince"
+  },
+  {
+    "id": 13,
+    "word": "convinced",
+    "part_of_speech": "adjective",
+    "meaning_zh": "確信的",
+    "question": "I'm _____ of John's innocence.",
+    "options": {
+      "A": "convinced",
+      "B": "relevant",
+      "C": "incredible",
+      "D": "adequate"
+    },
+    "answer_letter": "A",
+    "answer": "convinced"
+  },
+  {
+    "id": 14,
+    "word": "illustrate",
+    "part_of_speech": "verb",
+    "meaning_zh": "為……畫插圖；說明",
+    "question": "The graphs _____ the growth of our business.",
+    "options": {
+      "A": "illustrate",
+      "B": "occupy",
+      "C": "eliminate",
+      "D": "convince"
+    },
+    "answer_letter": "A",
+    "answer": "illustrate"
+  },
+  {
+    "id": 15,
+    "word": "illustration",
+    "part_of_speech": "noun",
+    "meaning_zh": "圖解；插圖",
+    "question": "An _____ is often more useful in teaching than mere words.",
+    "options": {
+      "A": "illustration",
+      "B": "suggestion",
+      "C": "explanation",
+      "D": "demonstration"
+    },
+    "answer_letter": "A",
+    "answer": "illustration"
+  },
+  {
+    "id": 16,
+    "word": "surroundings",
+    "part_of_speech": "noun",
+    "meaning_zh": "環境",
+    "question": "It took me a couple of days to get used to my new _____.",
+    "options": {
+      "A": "reservation",
+      "B": "promotion",
+      "C": "surroundings",
+      "D": "occupation"
+    },
+    "answer_letter": "C",
+    "answer": "surroundings"
+  },
+  {
+    "id": 17,
+    "word": "eliminate",
+    "part_of_speech": "verb",
+    "meaning_zh": "殲滅；剔除；淘汰",
+    "question": "We have to _____ the losing team from the competition.",
+    "options": {
+      "A": "eliminate",
+      "B": "instruct",
+      "C": "expand",
+      "D": "occupy"
+    },
+    "answer_letter": "A",
+    "answer": "eliminate"
+  },
+  {
+    "id": 18,
+    "word": "formula",
+    "part_of_speech": "noun",
+    "meaning_zh": "配方；公式",
+    "question": "We'll have to come up with a _____ to solve this math problem.",
+    "options": {
+      "A": "option",
+      "B": "suggestion",
+      "C": "formula",
+      "D": "estimate"
+    },
+    "answer_letter": "C",
+    "answer": "formula"
+  },
+  {
+    "id": 19,
+    "word": "instruct",
+    "part_of_speech": "verb",
+    "meaning_zh": "教授；指導；指示；告知",
+    "question": "To be a singer, you need someone to _____ you in singing.",
+    "options": {
+      "A": "instruct",
+      "B": "convince",
+      "C": "illustrate",
+      "D": "demonstrate"
+    },
+    "answer_letter": "A",
+    "answer": "instruct"
+  },
+  {
+    "id": 20,
+    "word": "instructor",
+    "part_of_speech": "noun",
+    "meaning_zh": "指導者；教練",
+    "question": "Sam works as a fitness _____ at that gym.",
+    "options": {
+      "A": "illustrator",
+      "B": "candidate",
+      "C": "contestant",
+      "D": "instructor"
+    },
+    "answer_letter": "D",
+    "answer": "instructor"
+  },
+  {
+    "id": 21,
+    "word": "eventual",
+    "part_of_speech": "adjective",
+    "meaning_zh": "終究的；最後的",
+    "question": "No one suspected the _____ result of the decision.",
+    "options": {
+      "A": "eventual",
+      "B": "adequate",
+      "C": "initial",
+      "D": "relevant"
+    },
+    "answer_letter": "A",
+    "answer": "eventual"
+  },
+  {
+    "id": 22,
+    "word": "eventually",
+    "part_of_speech": "adverb",
+    "meaning_zh": "終究；到頭來",
+    "question": "The ship will have to be repainted _____.",
+    "options": {
+      "A": "initially",
+      "B": "despite",
+      "C": "consequently",
+      "D": "eventually"
+    },
+    "answer_letter": "D",
+    "answer": "eventually"
+  },
+  {
+    "id": 23,
+    "word": "demonstrate",
+    "part_of_speech": "verb",
+    "meaning_zh": "示範；示威",
+    "question": "Could you _____ how to operate this machine?",
+    "options": {
+      "A": "demonstrate",
+      "B": "occupy",
+      "C": "convince",
+      "D": "instruct"
+    },
+    "answer_letter": "A",
+    "answer": "demonstrate"
+  },
+  {
+    "id": 24,
+    "word": "demonstration",
+    "part_of_speech": "noun",
+    "meaning_zh": "示範；示威活動",
+    "question": "The tennis coach gave us a _____ of basic strokes.",
+    "options": {
+      "A": "illustration",
+      "B": "explanation",
+      "C": "demonstration",
+      "D": "occupation"
+    },
+    "answer_letter": "C",
+    "answer": "demonstration"
+  },
+  {
+    "id": 25,
+    "word": "leisurely",
+    "part_of_speech": "adjective",
+    "meaning_zh": "休閒的；從容不迫的",
+    "question": "Since the weather was nice, Gary went for a _____ drive along the coast.",
+    "options": {
+      "A": "leisurely",
+      "B": "slight",
+      "C": "greasy",
+      "D": "adequate"
+    },
+    "answer_letter": "A",
+    "answer": "leisurely"
+  },
+  {
+    "id": 26,
+    "word": "adequate",
+    "part_of_speech": "adjective",
+    "meaning_zh": "充分的；適當的",
+    "question": "You need _____ sleep, or else your health will suffer.",
+    "options": {
+      "A": "relevant",
+      "B": "inadequate",
+      "C": "adequate",
+      "D": "slight"
+    },
+    "answer_letter": "C",
+    "answer": "adequate"
+  },
+  {
+    "id": 27,
+    "word": "inadequate",
+    "part_of_speech": "adjective",
+    "meaning_zh": "不適當的；不充分的",
+    "question": "Matt was fired because he was _____ for the job.",
+    "options": {
+      "A": "inadequate",
+      "B": "appropriate",
+      "C": "relevant",
+      "D": "adequate"
+    },
+    "answer_letter": "A",
+    "answer": "inadequate"
+  },
+  {
+    "id": 28,
+    "word": "slight",
+    "part_of_speech": "adjective",
+    "meaning_zh": "輕微的",
+    "question": "David had a _____ headache after bumping his head into the wall.",
+    "options": {
+      "A": "slight",
+      "B": "adequate",
+      "C": "greasy",
+      "D": "eventual"
+    },
+    "answer_letter": "A",
+    "answer": "slight"
+  },
+  {
+    "id": 29,
+    "word": "candidate",
+    "part_of_speech": "noun",
+    "meaning_zh": "候選人",
+    "question": "There are two _____ running for chairman of our department.",
+    "options": {
+      "A": "illustrator",
+      "B": "candidate",
+      "C": "instructor",
+      "D": "contestant"
+    },
+    "answer_letter": "B",
+    "answer": "candidate"
+  },
+  {
+    "id": 30,
+    "word": "bond",
+    "part_of_speech": "noun",
+    "meaning_zh": "關係；債券；黏合",
+    "question": "There is a special emotional _____ between the mother and the newborn baby.",
+    "options": {
+      "A": "bond",
+      "B": "formula",
+      "C": "emphasis",
+      "D": "option"
+    },
+    "answer_letter": "A",
+    "answer": "bond"
+  },
+  {
+    "id": 31,
+    "word": "appropriate",
+    "part_of_speech": "adjective",
+    "meaning_zh": "適當的；合適的",
+    "question": "Jeans are obviously not _____ for such formal occasions.",
+    "options": {
+      "A": "inappropriate",
+      "B": "appropriate",
+      "C": "adequate",
+      "D": "relevant"
+    },
+    "answer_letter": "B",
+    "answer": "appropriate"
+  },
+  {
+    "id": 32,
+    "word": "inappropriate",
+    "part_of_speech": "adjective",
+    "meaning_zh": "不適當的；不妥當的",
+    "question": "Danny said something _____ to the boss at the staff party.",
+    "options": {
+      "A": "relevant",
+      "B": "appropriate",
+      "C": "adequate",
+      "D": "inappropriate"
+    },
+    "answer_letter": "D",
+    "answer": "inappropriate"
+  },
+  {
+    "id": 33,
+    "word": "revolution",
+    "part_of_speech": "noun",
+    "meaning_zh": "革命；運行；公轉",
+    "question": "There is a _____ taking place in that country.",
+    "options": {
+      "A": "revolution",
+      "B": "occupation",
+      "C": "reservation",
+      "D": "promotion"
+    },
+    "answer_letter": "A",
+    "answer": "revolution"
+  },
+  {
+    "id": 34,
+    "word": "revolutionary",
+    "part_of_speech": "adjective",
+    "meaning_zh": "革命性的；創新的",
+    "question": "The computer was a _____ invention when it first appeared.",
+    "options": {
+      "A": "eventual",
+      "B": "revolutionary",
+      "C": "relevant",
+      "D": "incredible"
+    },
+    "answer_letter": "B",
+    "answer": "revolutionary"
+  },
+  {
+    "id": 35,
+    "word": "emphasis",
+    "part_of_speech": "noun",
+    "meaning_zh": "強調；重視",
+    "question": "We lay great _____ on the quality of our products.",
+    "options": {
+      "A": "bond",
+      "B": "emphasis",
+      "C": "consequence",
+      "D": "formula"
+    },
+    "answer_letter": "B",
+    "answer": "emphasis"
+  },
+  {
+    "id": 36,
+    "word": "greasy",
+    "part_of_speech": "adjective",
+    "meaning_zh": "油膩的",
+    "question": "The floor in the kitchen is _____, so you'd better walk carefully.",
+    "options": {
+      "A": "greasy",
+      "B": "leisurely",
+      "C": "slight",
+      "D": "secure"
+    },
+    "answer_letter": "A",
+    "answer": "greasy"
+  },
+  {
+    "id": 37,
+    "word": "reservation",
+    "part_of_speech": "noun",
+    "meaning_zh": "預訂；保留（意見）",
+    "question": "I'd like to make a _____ for a table of five people tonight.",
+    "options": {
+      "A": "occupation",
+      "B": "promotion",
+      "C": "reservation",
+      "D": "suggestion"
+    },
+    "answer_letter": "C",
+    "answer": "reservation"
+  },
+  {
+    "id": 38,
+    "word": "secure",
+    "part_of_speech": "adjective",
+    "meaning_zh": "安全的；牢固的",
+    "question": "Endangered species should be _____ against poachers.",
+    "options": {
+      "A": "adequate",
+      "B": "appropriate",
+      "C": "relevant",
+      "D": "secure"
+    },
+    "answer_letter": "D",
+    "answer": "secure"
+  },
+  {
+    "id": 39,
+    "word": "suggestion",
+    "part_of_speech": "noun",
+    "meaning_zh": "建議；提議",
+    "question": "They accepted our _____ and changed their plan.",
+    "options": {
+      "A": "explanation",
+      "B": "promotion",
+      "C": "suggestion",
+      "D": "reservation"
+    },
+    "answer_letter": "C",
+    "answer": "suggestion"
+  },
+  {
+    "id": 40,
+    "word": "waken",
+    "part_of_speech": "verb",
+    "meaning_zh": "醒來；喚醒",
+    "question": "A loud noise can _____ a sleeping baby.",
+    "options": {
+      "A": "expand",
+      "B": "occupy",
+      "C": "waken",
+      "D": "eliminate"
+    },
+    "answer_letter": "C",
+    "answer": "waken"
+  },
+  {
+    "id": 41,
+    "word": "website",
+    "part_of_speech": "noun",
+    "meaning_zh": "網站",
+    "question": "Please visit our _____ for more information.",
+    "options": {
+      "A": "website",
+      "B": "formula",
+      "C": "promotion",
+      "D": "option"
+    },
+    "answer_letter": "A",
+    "answer": "website"
+  },
+  {
+    "id": 42,
+    "word": "option",
+    "part_of_speech": "noun",
+    "meaning_zh": "選擇",
+    "question": "Because of the rising flood waters, we had no _____ but to evacuate our home.",
+    "options": {
+      "A": "formula",
+      "B": "consequence",
+      "C": "option",
+      "D": "suggestion"
+    },
+    "answer_letter": "C",
+    "answer": "option"
+  },
+  {
+    "id": 43,
+    "word": "incredible",
+    "part_of_speech": "adjective",
+    "meaning_zh": "難以置信的",
+    "question": "It's _____ that Victor speaks English so fluently without an accent.",
+    "options": {
+      "A": "adequate",
+      "B": "incredible",
+      "C": "relevant",
+      "D": "eventual"
+    },
+    "answer_letter": "B",
+    "answer": "incredible"
+  },
+  {
+    "id": 44,
+    "word": "promotion",
+    "part_of_speech": "noun",
+    "meaning_zh": "促進；提倡；升遷；促銷",
+    "question": "Lisa got a _____ last month, and now she can afford to buy a new car.",
+    "options": {
+      "A": "occupation",
+      "B": "reservation",
+      "C": "demonstration",
+      "D": "promotion"
+    },
+    "answer_letter": "D",
+    "answer": "promotion"
+  },
+  {
+    "id": 45,
+    "word": "relevant",
+    "part_of_speech": "adjective",
+    "meaning_zh": "有關的",
+    "question": "Do you have any previous job experience _____ to this type of work?",
+    "options": {
+      "A": "relevant",
+      "B": "incredible",
+      "C": "eventual",
+      "D": "adequate"
+    },
+    "answer_letter": "A",
+    "answer": "relevant"
+  },
+  {
+    "id": 46,
+    "word": "despite",
+    "part_of_speech": "preposition",
+    "meaning_zh": "儘管",
+    "question": "_____ our best efforts, we couldn't save the dying man.",
+    "options": {
+      "A": "despite",
+      "B": "Eventually",
+      "C": "Consequently",
+      "D": "Initially"
+    },
+    "answer_letter": "A",
+    "answer": "despite"
+  }
+]
