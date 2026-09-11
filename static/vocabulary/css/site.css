@@ -30,7 +30,8 @@ a {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
 }
 
@@ -68,7 +69,7 @@ input[type="search"] {
 .site-subtitle,
 .eyebrow,
 .page-heading p,
-.set-row p,
+.selected-set p,
 .quiz-heading p,
 .summary-note {
   color: var(--muted-text);
@@ -152,22 +153,48 @@ h2 {
   font-size: 20px;
 }
 
-.set-list {
+.set-picker {
   display: grid;
-  gap: 0;
+  gap: 8px;
+  max-width: 440px;
+  margin-bottom: 24px;
 }
 
-.set-row {
-  display: grid;
-  grid-template-columns: 1fr minmax(260px, 320px);
-  gap: 28px;
-  align-items: center;
+.set-picker label {
+  color: var(--muted-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.set-picker select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: var(--text);
+  padding: 9px 36px 9px 12px;
+}
+
+.selected-set {
+  max-width: 560px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.selected-set__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
   border-bottom: 1px solid var(--border);
-  padding: 22px 0;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
 }
 
-.set-row:last-child {
-  border-bottom: 0;
+.selected-set__heading p {
+  margin-bottom: 0;
 }
 
 .start-form,
@@ -532,10 +559,15 @@ h2 {
     font-size: 26px;
   }
 
-  .set-row,
+  .selected-set__heading,
   .quiz-heading,
   .result-summary {
     display: block;
+  }
+
+  .selected-set__heading .text-link {
+    display: inline-block;
+    margin-top: 8px;
   }
 
   .count-options {

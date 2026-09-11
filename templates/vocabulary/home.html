@@ -10,15 +10,31 @@
     <p>使用例句練習單字用法，選擇題會隨機排列題目與選項。</p>
   </div>
 
-  <div class="set-list">
-    {% for set in sets %}
-      <article class="set-row">
-        <div>
-          <h2>{{ set.title }}</h2>
-          <p>Level {{ set.level }}・Unit {{ set.unit }}・{{ set.active_question_count }} 題</p>
-          <a href="{% url 'vocabulary:word_list' set.slug %}">查看單字</a>
+  {% if sets %}
+    {% with selected_set=sets.0 %}
+      <div class="set-picker">
+        <label for="set-select">選擇單元</label>
+        <select id="set-select" data-set-selector>
+          {% for set in sets %}
+            <option value="{% url 'vocabulary:start_quiz' set.slug %}"
+                    data-title="{{ set.title }}"
+                    data-meta="Level {{ set.level }}・Unit {{ set.unit }}・{{ set.active_question_count }} 題"
+                    data-words-url="{% url 'vocabulary:word_list' set.slug %}">
+              {{ set.title }}（{{ set.active_question_count }} 題）
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <article class="selected-set">
+        <div class="selected-set__heading">
+          <div>
+            <h2 data-set-title>{{ selected_set.title }}</h2>
+            <p data-set-meta>Level {{ selected_set.level }}・Unit {{ selected_set.unit }}・{{ selected_set.active_question_count }} 題</p>
+          </div>
+          <a class="text-link" data-words-link href="{% url 'vocabulary:word_list' selected_set.slug %}">查看單字</a>
         </div>
-        <form class="start-form" method="post" action="{% url 'vocabulary:start_quiz' set.slug %}">
+        <form class="start-form" data-start-form method="post" action="{% url 'vocabulary:start_quiz' selected_set.slug %}">
           {% csrf_token %}
           <fieldset class="mode-options" data-mode-selector>
             <legend>測驗類型</legend>
@@ -40,15 +56,31 @@
           <button class="button" type="submit">開始測驗</button>
         </form>
       </article>
-    {% empty %}
-      <p class="empty">目前沒有已發布的單字單元。請先匯入題庫。</p>
-    {% endfor %}
-  </div>
+    {% endwith %}
+  {% else %}
+    <p class="empty">目前沒有已發布的單字單元。請先匯入題庫。</p>
+  {% endif %}
 </section>
 {% endblock %}
 
 {% block scripts %}
 <script>
+  const setSelector = document.querySelector("[data-set-selector]");
+  if (setSelector) {
+    const startForm = document.querySelector("[data-start-form]");
+    const setTitle = document.querySelector("[data-set-title]");
+    const setMeta = document.querySelector("[data-set-meta]");
+    const wordsLink = document.querySelector("[data-words-link]");
+
+    setSelector.addEventListener("change", function () {
+      const selected = setSelector.options[setSelector.selectedIndex];
+      startForm.action = selected.value;
+      setTitle.textContent = selected.dataset.title;
+      setMeta.textContent = selected.dataset.meta;
+      wordsLink.href = selected.dataset.wordsUrl;
+    });
+  }
+
   document.querySelectorAll("[data-mode-selector]").forEach(function (selector) {
     const form = selector.closest("form");
     const directions = form.querySelector("[data-direction-selector]");
